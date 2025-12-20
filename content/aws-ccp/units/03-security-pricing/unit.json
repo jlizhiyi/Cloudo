@@ -1,0 +1,8 @@
+{
+  "dir": "03-security-pricing",
+  "title": "Security & Pricing",
+  "lessons": [
+    { "slug": "01-shared-responsibility", "title": "Shared Responsibility Model" },
+    { "slug": "02-cloud-pricing-models", "title": "Cloud Pricing Models" }
+  ]
+}

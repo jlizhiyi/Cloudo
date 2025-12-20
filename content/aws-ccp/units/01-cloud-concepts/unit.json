@@ -1,0 +1,8 @@
+{
+  "dir": "01-cloud-concepts",
+  "title": "Cloud Concepts",
+  "lessons": [
+    { "slug": "01-what-is-cloud", "title": "What is Cloud Computing?" },
+    { "slug": "02-cloud-deployment-models", "title": "Cloud Deployment Models" }
+  ]
+}

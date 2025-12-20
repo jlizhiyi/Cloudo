@@ -1,0 +1,8 @@
+{
+  "dir": "02-core-services",
+  "title": "Core Services",
+  "lessons": [
+    { "slug": "01-compute-services", "title": "Compute Services" },
+    { "slug": "02-storage-services", "title": "Storage Services" }
+  ]
+}

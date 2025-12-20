@@ -1,0 +1,42 @@
+[
+  {
+    "type": "multiple",
+    "question": "A bank requires a database to remain on-premises due to strict compliance laws, but wants to use the cloud for their customer-facing web app. Which model fits best?",
+    "options": [
+      "Public Cloud",
+      "Private Cloud",
+      "Hybrid Cloud",
+      "Multi-Cloud"
+    ],
+    "correct": 2,
+    "explanation": "Hybrid Cloud connects on-premises infrastructure (the database) to public cloud resources (the web app), allowing data and applications to be shared between them."
+  },
+  {
+    "type": "multiple",
+    "question": "A startup wants to launch a new video streaming service with zero upfront infrastructure cost. They have no existing servers. Which model should they choose?",
+    "options": [
+      "On-premises",
+      "Hybrid",
+      "Public cloud",
+      "Private cloud"
+    ],
+    "correct": 2,
+    "explanation": "Public cloud is the only model that offers zero upfront infrastructure costs and requires no existing hardware."
+  },
+  {
+    "type": "fillblank",
+    "question": "A ___ cloud deployment strategy involves using services from two or more different public cloud providers (e.g., AWS and Azure) simultaneously.",
+    "answers": ["multi-cloud", "Multi-cloud", "Multi cloud"],
+    "explanation": "Multi-cloud is the use of multiple cloud computing and storage services in a single heterogeneous architecture."
+  },
+  {
+    "type": "matching",
+    "question": "Match the deployment model to the scenario:",
+    "pairs": [
+      ["Public cloud", "Running all workloads on provider hardware shared with others"],
+      ["Private cloud", "Cloud infrastructure dedicated to a single organization"],
+      ["Hybrid cloud", "Connecting a legacy data center to the cloud"],
+      ["On-premises", "You manage 100% of the hardware, cooling, and power"]
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "type": "multiple",
+    "question": "You need a server where you have full control over the Operating System (OS) and kernel configurations. Which compute option should you choose?",
+    "options": [
+      "Serverless (FaaS)",
+      "Virtual Machines (Instances)",
+      "Platform as a Service",
+      "SaaS"
+    ],
+    "correct": 1,
+    "explanation": "Virtual Machines (like EC2) provide Infrastructure as a Service (IaaS), giving you full control over the OS and configuration."
+  },
+  {
+    "type": "multiple",
+    "question": "Which of the following is a characteristic of Serverless computing?",
+    "options": [
+      "You pay for servers even when they are idle",
+      "You must manually patch the operating system",
+      "You only pay for the compute time consumed by code execution",
+      "Scaling must be managed manually"
+    ],
+    "correct": 2,
+    "explanation": "With serverless, you don't provision infrastructure. You are charged only when your code is running, not for idle time."
+  },
+  {
+    "type": "matching",
+    "question": "Match the compute type to the concept:",
+    "pairs": [
+      ["Virtual Machine", "Resizable compute capacity where you manage the OS"],
+      ["Container", "Standardized unit packaging code and dependencies"],
+      ["Serverless", "Run code without provisioning or managing servers"],
+      ["Auto Scaling", "Automatically increasing or decreasing server count"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "With ___ computing, the cloud provider handles all infrastructure management, allowing developers to focus solely on code.",
+    "answers": ["serverless", "Serverless"],
+    "explanation": "Serverless abstracts the underlying infrastructure entirely."
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "type": "multiple",
+    "question": "You are hosting a database on a virtual machine and need a storage drive that offers low-latency and persists independent of the VM's life. What should you use?",
+    "options": [
+      "Object Storage",
+      "Block Storage",
+      "Archive Storage",
+      "File Storage"
+    ],
+    "correct": 1,
+    "explanation": "Block storage acts like a physical hard drive. It is required for databases and boot volumes because it supports frequent read/write operations with low latency."
+  },
+  {
+    "type": "multiple",
+    "question": "A marketing team needs a shared folder that 20 different Linux servers can read and write to simultaneously. Which solution is best?",
+    "options": [
+      "Block Storage",
+      "Object Storage",
+      "File Storage",
+      "Instance Store"
+    ],
+    "correct": 2,
+    "explanation": "File storage is designed to be mounted by multiple servers simultaneously, acting like a shared network drive."
+  },
+  {
+    "type": "matching",
+    "question": "Match storage type to its best use case:",
+    "pairs": [
+      ["Object storage", "Storing millions of user profile photos"],
+      ["Block storage", "The boot drive for a Virtual Machine"],
+      ["File storage", "A shared content management repository"],
+      ["Archive storage", "Financial records needed for an audit in 5 years"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "Why is Object Storage NOT suitable for running a fast, transactional database?",
+    "options": [
+      "It is too expensive",
+      "It does not support encryption",
+      "It treats data as whole objects; you cannot edit a single block of a file",
+      "It has limited capacity"
+    ],
+    "correct": 2,
+    "explanation": "Object storage is 'Write Once, Read Many'. To edit a file, you must re-upload the entire object. Databases need Block storage to edit tiny pieces of data instantly."
+  }
+]

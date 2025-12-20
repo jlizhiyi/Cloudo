@@ -1,0 +1,42 @@
+[
+  {
+    "type": "multiple",
+    "question": "According to the Shared Responsibility Model, which of the following is the customer responsible for?",
+    "options": [
+      "Decommissioning old hard drives",
+      "Protecting the global network infrastructure",
+      "Setting strong passwords and Multi-Factor Authentication (MFA)",
+      "Physical security of the data center"
+    ],
+    "correct": 2,
+    "explanation": "Identity management (passwords, MFA) is a core responsibility of the customer. The provider manages the physical hardware and network."
+  },
+  {
+    "type": "multiple",
+    "question": "Who is responsible for applying security patches to the RDS (Managed Database) operating system?",
+    "options": [
+      "The Cloud Provider",
+      "The Customer",
+      "The Database Manufacturer",
+      "No one"
+    ],
+    "correct": 0,
+    "explanation": "Because RDS is a 'Managed Service', the Cloud Provider handles the underlying OS and patching. If this were a database on a generic VM, the Customer would be responsible."
+  },
+  {
+    "type": "matching",
+    "question": "Categorize the responsibility:",
+    "pairs": [
+      ["Provider Responsibility", "Security OF the cloud (Hardware, Regions)"],
+      ["Customer Responsibility", "Security IN the cloud (Data, Firewall rules)"],
+      ["Provider Responsibility", "Disposing of failed server disks"],
+      ["Customer Responsibility", "Encrypting sensitive client data"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "If a user leaves an S3 bucket open to the public and data is stolen, the ___ is at fault according to the shared model.",
+    "answers": ["customer", "Customer"],
+    "explanation": "The provider ensures the storage service works; the customer is responsible for configuring the permissions correctly."
+  }
+]

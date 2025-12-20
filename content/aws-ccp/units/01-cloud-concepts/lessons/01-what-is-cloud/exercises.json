@@ -1,0 +1,54 @@
+[
+  {
+    "type": "multiple",
+    "question": "What is the primary difference between Capital Expense (CapEx) and Variable Expense (OpEx) in the cloud?",
+    "options": [
+      "CapEx is pay-as-you-go; OpEx is paying upfront",
+      "CapEx requires guessing capacity; OpEx allows scaling on demand",
+      "CapEx is for software; OpEx is for hardware",
+      "There is no difference in the cloud"
+    ],
+    "correct": 1,
+    "explanation": "CapEx (Capital Expense) involves large upfront investments in physical infrastructure where you must guess capacity. Cloud computing operates on Variable Expense (OpEx), allowing you to pay only for what you consume."
+  },
+  {
+    "type": "multiple",
+    "question": "A startup wants to deploy an application globally to reduce latency for users in Asia and Europe. Which cloud benefit does this describe?",
+    "options": [
+      "Economies of Scale",
+      "Global Reach",
+      "Agility",
+      "High Availability"
+    ],
+    "correct": 1,
+    "explanation": "Global Reach allows you to deploy applications to physical locations around the world in minutes to reduce latency for end-users."
+  },
+  {
+    "type": "matching",
+    "question": "Match the cloud benefit to its description:",
+    "pairs": [
+      ["Elasticity", "Acquire resources as you need them and release when you don't"],
+      ["Agility", "Deploy technology resources in minutes instead of weeks"],
+      ["Economies of scale", "Lower pay-as-you-go prices as usage aggregates"],
+      ["Reliability", "The ability to recover from infrastructure service disruptions"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "Which of the following is NOT a benefit of cloud computing?",
+    "options": [
+      "Trade capital expense for variable expense",
+      "Stop guessing about capacity",
+      "Complete control over physical data center security",
+      "Increase speed and agility"
+    ],
+    "correct": 2,
+    "explanation": "In the public cloud, you give up physical control of the data center (locks, guards, fencing) to the provider in exchange for not having to manage it."
+  },
+  {
+    "type": "fillblank",
+    "question": "Because cloud providers purchase hardware in massive quantities, they can offer lower prices due to ___.",
+    "answers": ["economies of scale", "Economies of scale"],
+    "explanation": "Economies of scale is the ability to do things more cheaply and efficiently when operating at a larger volume."
+  }
+]
