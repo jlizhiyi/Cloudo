@@ -38,5 +38,49 @@
       ["Hybrid cloud", "Connecting a legacy data center to the cloud"],
       ["On-premises", "You manage 100% of the hardware, cooling, and power"]
     ]
+  },
+  {
+    "type": "multiple",
+    "question": "Which deployment model allows a company to keep sensitive legacy applications in their own data center while using the cloud for new development?",
+    "options": [
+      "Public Cloud",
+      "Hybrid Cloud",
+      "Community Cloud",
+      "Private Cloud"
+    ],
+    "correct": 1,
+    "explanation": "Hybrid cloud bridges the gap between existing on-premises data centers and public cloud resources."
+  },
+  {
+    "type": "multiple",
+    "question": "In which deployment model are you responsible for all hardware maintenance?",
+    "options": [
+      "On-premises (Private Cloud)",
+      "Public Cloud",
+      "Hybrid Cloud",
+      "Virtual Private Cloud"
+    ],
+    "correct": 0,
+    "explanation": "In an on-premises private cloud, you own the data center, meaning you fix broken servers, manage cooling, and pay electricity bills."
+  },
+  {
+    "type": "multiple",
+    "question": "True or False: A Public Cloud is less secure than a Private Cloud.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correct": 1,
+    "explanation": "False. Public clouds often have superior security certifications and physical security than average private data centers. Security depends on how you configure it (Shared Responsibility), not just where it lives."
+  },
+  {
+    "type": "matching",
+    "question": "Match the characteristic to the model:",
+    "pairs": [
+      ["Multi-tenancy (shared hardware)", "Public Cloud"],
+      ["Single-tenancy (dedicated hardware)", "Private Cloud"],
+      ["Zero upfront cost", "Public Cloud"],
+      ["Cloud Bursting", "Hybrid Cloud"]
+    ]
   }
 ]

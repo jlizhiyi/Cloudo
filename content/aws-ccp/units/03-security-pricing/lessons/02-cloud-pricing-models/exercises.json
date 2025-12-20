@@ -44,5 +44,45 @@
     ],
     "correct": 2,
     "explanation": "Reserved Instances (or Savings Plans) provide the best discount for steady-state workloads with a long-term commitment."
+  },
+  {
+    "type": "multiple",
+    "question": "Which pricing model allows you to use your existing server software licenses (like Windows or SQL Server) on the cloud?",
+    "options": [
+      "On-Demand",
+      "Spot Instances",
+      "Dedicated Hosts",
+      "Free Tier"
+    ],
+    "correct": 2,
+    "explanation": "Dedicated Hosts provide a physical server dedicated to your use, which is often required to maintain compliance with Bring Your Own License (BYOL) agreements."
+  },
+  {
+    "type": "fillblank",
+    "question": "To get a significant discount on steady-state workloads, you should purchase a ___ Instance.",
+    "answers": ["reserved", "Reserved"],
+    "explanation": "Reserved Instances require a 1 or 3-year commitment but offer up to 72% savings."
+  },
+  {
+    "type": "multiple",
+    "question": "What is the main risk of using Spot Instances?",
+    "options": [
+      "They are slower than normal instances",
+      "They can be terminated by the provider with short notice",
+      "They require a 3-year contract",
+      "They have no internet access"
+    ],
+    "correct": 1,
+    "explanation": "Spot instances use spare capacity. If the provider needs that capacity back, they can terminate your instance with a 2-minute warning."
+  },
+  {
+    "type": "matching",
+    "question": "Match the use case to the pricing model:",
+    "pairs": [
+      ["Spiky, unpredictable traffic", "On-Demand"],
+      ["Fault-tolerant batch processing", "Spot Instances"],
+      ["Production database running 24/7", "Reserved Instances"],
+      ["Trying out a service for the first time", "Free Tier"]
+    ]
   }
 ]

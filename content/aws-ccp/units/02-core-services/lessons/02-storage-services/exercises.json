@@ -44,5 +44,45 @@
     ],
     "correct": 2,
     "explanation": "Object storage is 'Write Once, Read Many'. To edit a file, you must re-upload the entire object. Databases need Block storage to edit tiny pieces of data instantly."
+  },
+  {
+    "type": "multiple",
+    "question": "You want to store a static website (HTML, CSS, Images) as cheaply as possible without running a server. Which storage service is best?",
+    "options": [
+      "Block Storage attached to a VM",
+      "Object Storage",
+      "Archive Storage",
+      "File Storage"
+    ],
+    "correct": 1,
+    "explanation": "Object Storage (like S3) can host static websites directly without needing a web server, making it extremely cost-effective."
+  },
+  {
+    "type": "fillblank",
+    "question": "For data that is rarely accessed but must be kept for regulatory compliance (e.g., 7 years), use ___ storage.",
+    "answers": ["archive", "Archive", "cold", "Cold"],
+    "explanation": "Archive (or cold) storage offers the lowest cost per gigabyte but requires time to retrieve data."
+  },
+  {
+    "type": "multiple",
+    "question": "Which storage type uses 'Buckets' to organize data?",
+    "options": [
+      "Object Storage",
+      "Block Storage",
+      "File Storage",
+      "Instance Storage"
+    ],
+    "correct": 0,
+    "explanation": "Object storage (like AWS S3) organizes objects into containers called Buckets."
+  },
+  {
+    "type": "matching",
+    "question": "Match the characteristic to the storage type:",
+    "pairs": [
+      ["Flat namespace (Keys/Values)", "Object Storage"],
+      ["Hierarchical file system (Folders)", "File Storage"],
+      ["Low latency, bootable", "Block Storage"],
+      ["Lowest cost, slow retrieval", "Archive Storage"]
+    ]
   }
 ]

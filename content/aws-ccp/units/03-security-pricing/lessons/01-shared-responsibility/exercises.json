@@ -38,5 +38,45 @@
     "question": "If a user leaves an S3 bucket open to the public and data is stolen, the ___ is at fault according to the shared model.",
     "answers": ["customer", "Customer"],
     "explanation": "The provider ensures the storage service works; the customer is responsible for configuring the permissions correctly."
+  },
+  {
+    "type": "multiple",
+    "question": "Who is responsible for the physical security of a data center (e.g., locks, cameras, guards)?",
+    "options": [
+      "The Customer",
+      "The Cloud Provider",
+      "Both equally",
+      "Local Police"
+    ],
+    "correct": 1,
+    "explanation": "The Cloud Provider owns the facilities and is solely responsible for physical security."
+  },
+  {
+    "type": "multiple",
+    "question": "You launch a virtual machine (EC2). Who is responsible for installing antivirus software on it?",
+    "options": [
+      "The Cloud Provider",
+      "The Customer",
+      "It is installed automatically",
+      "The ISP"
+    ],
+    "correct": 1,
+    "explanation": "For IaaS (like EC2), the customer has full control of the guest operating system and must secure it, including antivirus and firewalls."
+  },
+  {
+    "type": "matching",
+    "question": "Match the task to the responsible party:",
+    "pairs": [
+      ["Replacing a failed hard drive", "Cloud Provider"],
+      ["Updating the server's firmware", "Cloud Provider"],
+      ["Patching the Guest OS (Windows/Linux)", "Customer"],
+      ["Configuring the Network Firewall (Security Group)", "Customer"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "The Cloud Provider is responsible for security ___ the cloud.",
+    "answers": ["of", "OF"],
+    "explanation": "Provider = Security OF the cloud. Customer = Security IN the cloud."
   }
 ]

@@ -50,5 +50,45 @@
     "question": "Because cloud providers purchase hardware in massive quantities, they can offer lower prices due to ___.",
     "answers": ["economies of scale", "Economies of scale"],
     "explanation": "Economies of scale is the ability to do things more cheaply and efficiently when operating at a larger volume."
+  },
+  {
+    "type": "multiple",
+    "question": "You have a website that experiences traffic spikes only during the holidays. You want your infrastructure to automatically grow to meet this demand and shrink afterwards. Which concept is this?",
+    "options": [
+      "Agility",
+      "Elasticity",
+      "Durability",
+      "Security"
+    ],
+    "correct": 1,
+    "explanation": "Elasticity is the ability to scale resources up or down easily based on demand, ensuring you don't pay for idle resources."
+  },
+  {
+    "type": "multiple",
+    "question": "What is 'High Availability'?",
+    "options": [
+      "Having data centers in every country",
+      "Ensuring systems are always functioning and accessible with minimal downtime",
+      "Being able to deploy code quickly",
+      "Having 100% uptime guaranteed"
+    ],
+    "correct": 1,
+    "explanation": "High Availability (HA) ensures that your application remains operational even when some components fail, usually by using redundant systems."
+  },
+  {
+    "type": "fillblank",
+    "question": "The ability to launch resources within minutes, allowing developers to experiment quickly, is known as ___.",
+    "answers": ["agility", "Agility"],
+    "explanation": "Agility in the cloud refers to the speed at which you can provision resources and innovate."
+  },
+  {
+    "type": "matching",
+    "question": "Match the scenario to the concept:",
+    "pairs": [
+      ["Stop guessing capacity", "Auto-scaling web servers based on traffic"],
+      ["Trade CapEx for OpEx", "Paying monthly for usage instead of buying a server rack"],
+      ["Go Global", "Deploying an app to Tokyo and London simultaneously"],
+      ["Agility", "Spinning up a test environment in 5 minutes"]
+    ]
   }
 ]

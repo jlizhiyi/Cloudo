@@ -38,5 +38,51 @@
     "question": "With ___ computing, the cloud provider handles all infrastructure management, allowing developers to focus solely on code.",
     "answers": ["serverless", "Serverless"],
     "explanation": "Serverless abstracts the underlying infrastructure entirely."
+  },
+  {
+    "type": "multiple",
+    "question": "You want to run a small script every day at 8 AM to process a file. You do not want to pay for a server to sit idle for the other 23 hours. What should you use?",
+    "options": [
+      "A Virtual Machine (EC2)",
+      "A Physical Server",
+      "Serverless functions (e.g. Lambda)",
+      "A Dedicated Host"
+    ],
+    "correct": 2,
+    "explanation": "Serverless functions are event-driven and you only pay for the time the code runs. This is the most cost-effective solution for short, scheduled tasks."
+  },
+  {
+    "type": "multiple",
+    "question": "Which statement about Containers is true?",
+    "options": [
+      "They are slower to start than Virtual Machines",
+      "They package code and dependencies into a single unit",
+      "They require a dedicated physical server for each container",
+      "They cannot run in the cloud"
+    ],
+    "correct": 1,
+    "explanation": "Containers wrap code and dependencies together, ensuring consistency across environments. They generally start much faster than VMs."
+  },
+  {
+    "type": "multiple",
+    "question": "Which service helps you handle sudden spikes in web traffic by adding more instances automatically?",
+    "options": [
+      "Auto Scaling",
+      "Object Storage",
+      "Content Delivery Network",
+      "Databases"
+    ],
+    "correct": 0,
+    "explanation": "Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance."
+  },
+  {
+    "type": "matching",
+    "question": "Who manages what?",
+    "pairs": [
+      ["Virtual Machine", "You manage the Guest OS"],
+      ["Serverless", "Provider manages the OS"],
+      ["On-Premises", "You manage the Hardware"],
+      ["Container", "You manage the application dependencies"]
+    ]
   }
 ]
