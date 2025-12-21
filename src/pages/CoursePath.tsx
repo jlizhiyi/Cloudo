@@ -6,7 +6,7 @@ import { useProgress } from '../hooks/useProgress';
 export default function CoursePath() {
   const { courseId } = useParams<{ courseId: string }>();
   const course = courseId ? courses[courseId] : undefined;
-  const { progress, isLessonUnlocked } = useProgress(courseId ?? '');
+  const { progress, isLessonUnlocked, isQuizUnlocked } = useProgress(courseId ?? '');
   
   if (!course) {
     return <div className="text-white">Course not found</div>;
@@ -67,7 +67,8 @@ export default function CoursePath() {
                         <div className="flex items-center justify-between">
                           <div>
                             <h3 className="text-white font-medium">{lesson.title}</h3>
-                            <p className="text-slate-400 text-sm">{lesson.exercises.length} exercises</p>
+                            <p className="text-slate-400 text-sm">5 exercises</p>
+                            {/* NOT {lesson.exercises.length} exercises */}
                           </div>
                           {completed ? (
                             <CheckCircle className="w-6 h-6 text-emerald-500" />
@@ -81,7 +82,7 @@ export default function CoursePath() {
                         <div className="flex items-center justify-between">
                           <div>
                             <h3 className="text-slate-400 font-medium">{lesson.title}</h3>
-                            <p className="text-slate-500 text-sm">{lesson.exercises.length} exercises</p>
+                            <p className="text-slate-500 text-sm">5 exercises</p>
                           </div>
                           <Lock className="w-5 h-5 text-slate-600" />
                         </div>
@@ -90,6 +91,21 @@ export default function CoursePath() {
                   </div>
                 );
               })}
+              <div className="mt-4">
+                {isQuizUnlocked(unitIdx) ? (
+                  <Link
+                    to={`/course/${course.id}/unit/${unitIdx}/quiz`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-500"
+                  >
+                    Unit Quiz
+                  </Link>
+                ) : (
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/50 opacity-50">
+                    <Lock className="w-4 h-4 text-slate-500" />
+                    <span className="text-slate-400">Unit Quiz</span>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         ))}

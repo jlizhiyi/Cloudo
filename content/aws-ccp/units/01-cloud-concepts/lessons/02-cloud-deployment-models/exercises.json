@@ -79,8 +79,8 @@
     "pairs": [
       ["Multi-tenancy (shared hardware)", "Public Cloud"],
       ["Single-tenancy (dedicated hardware)", "Private Cloud"],
-      ["Zero upfront cost", "Public Cloud"],
-      ["Cloud Bursting", "Hybrid Cloud"]
+      ["Uses multiple providers for redundancy", "Multi-Cloud"],
+      ["Cloud Bursting capability", "Hybrid Cloud"]
     ]
   }
 ]
