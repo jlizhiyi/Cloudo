@@ -1,0 +1,94 @@
+[
+  {
+    "type": "multiple",
+    "question": "Your application requires a MySQL database with automatic failover if the primary instance fails. Which RDS feature should you enable?",
+    "options": [
+      "Read Replicas",
+      "Multi-AZ Deployment",
+      "Aurora Serverless",
+      "Enhanced Monitoring"
+    ],
+    "correct": 1,
+    "explanation": "Multi-AZ creates a synchronous standby replica in another Availability Zone. If the primary fails, RDS automatically fails over to the standby."
+  },
+  {
+    "type": "multiple",
+    "question": "You have a reporting application that runs heavy read queries. You don't want these to slow down your production database. What should you use?",
+    "options": [
+      "Multi-AZ Deployment",
+      "Read Replicas",
+      "Larger instance type",
+      "Aurora Serverless"
+    ],
+    "correct": 1,
+    "explanation": "Read Replicas are asynchronous copies of your database. Direct read-heavy traffic to replicas to offload the primary database."
+  },
+  {
+    "type": "matching",
+    "question": "Match the feature to its purpose:",
+    "pairs": [
+      ["Multi-AZ", "Automatic failover for high availability"],
+      ["Read Replicas", "Scale read capacity horizontally"],
+      ["Automated Backups", "Point-in-time recovery"],
+      ["Aurora Serverless", "Auto-scaling capacity for variable workloads"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "Amazon ___ is a MySQL/PostgreSQL-compatible database that offers up to 5x the performance of standard MySQL.",
+    "answers": ["Aurora", "aurora"],
+    "explanation": "Aurora is AWS's cloud-native relational database, designed for high performance and availability."
+  },
+  {
+    "type": "multiple",
+    "question": "Which of the following is NOT managed by Amazon RDS?",
+    "options": [
+      "Database software patching",
+      "Automated backups",
+      "Schema design and query optimization",
+      "Hardware provisioning"
+    ],
+    "correct": 2,
+    "explanation": "RDS manages infrastructure, patching, and backups. You are still responsible for your data, schema design, and optimizing queries."
+  },
+  {
+    "type": "multiple",
+    "question": "A development team needs a database that scales to zero when not in use to save costs. Which should they use?",
+    "options": [
+      "RDS MySQL Multi-AZ",
+      "Aurora Serverless",
+      "RDS Read Replicas",
+      "DynamoDB"
+    ],
+    "correct": 1,
+    "explanation": "Aurora Serverless automatically scales capacity up and down, and can pause during inactivity—ideal for dev/test or variable workloads."
+  },
+  {
+    "type": "multiple",
+    "question": "How many copies of your data does Amazon Aurora store by default?",
+    "options": [
+      "2 copies in 1 AZ",
+      "3 copies in 1 AZ",
+      "6 copies across 3 AZs",
+      "1 copy with backups"
+    ],
+    "correct": 2,
+    "explanation": "Aurora automatically replicates your data 6 times across 3 Availability Zones for high durability."
+  },
+  {
+    "type": "matching",
+    "question": "Match the database need to the solution:",
+    "pairs": [
+      ["Standard MySQL with managed backups", "Amazon RDS for MySQL"],
+      ["5x MySQL performance, auto-scaling storage", "Amazon Aurora"],
+      ["Full control over OS and database config", "Self-managed on EC2"],
+      ["Scale down to zero during off-hours", "Aurora Serverless"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "RDS ___ Replicas allow you to scale read traffic by creating asynchronous copies of your database.",
+    "answers": ["Read", "read"],
+    "explanation": "Read Replicas offload read traffic from the primary database. They use asynchronous replication."
+  }
+]

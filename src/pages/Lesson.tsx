@@ -7,7 +7,7 @@ import MultipleChoice from '../components/exercises/MultipleChoice';
 import Matching from '../components/exercises/Matching';
 import FillBlank from '../components/exercises/FillBlank';
 import ReactMarkdown from 'react-markdown';
-// import remarkGfm from 'remark-gfm';
+import remarkGfm from 'remark-gfm';
 import type { Exercise } from '../types';
 import { sample, shuffle } from '../utils/questions';
 
@@ -194,7 +194,7 @@ export default function Lesson({ addXp }: LessonProps) {
                 <div className="space-y-4 mb-8">
                     <div className="prose prose-invert prose-slate max-w-none">
                         <ReactMarkdown
-                            // remarkPlugins={[remarkGfm]}
+                            remarkPlugins={[remarkGfm as any]}
                             components={{
                                 h1: ({ children }) => <h1 className="text-2xl font-bold text-white mt-6 mb-2">{children}</h1>,
                                 h2: ({ children }) => <h2 className="text-xl font-semibold text-white mt-4 mb-2">{children}</h2>,
@@ -210,6 +210,12 @@ export default function Lesson({ addXp }: LessonProps) {
                                 tr: ({ children }) => <tr className="odd:bg-slate-900/20">{children}</tr>,
                                 th: ({ children }) => <th className="px-3 py-2 text-left text-slate-300 font-semibold">{children}</th>,
                                 td: ({ children }) => <td className="px-3 py-2 text-slate-300">{children}</td>,
+
+                                blockquote: ({ children }) => (
+                                    <div className="border-l-4 border-emerald-500 bg-emerald-500/10 pl-4 py-3 my-6 rounded-r-lg text-slate-300 italic">
+                                        {children}
+                                    </div>
+                                ),
                                 ul: ({ children }) => <ul className="list-disc list-inside text-slate-300 space-y-1 my-4 pl-4">{children}</ul>,
                                 ol: ({ children }) => <ol className="list-decimal list-inside text-slate-300 space-y-1 my-4 pl-4">{children}</ol>,
                                 li: ({ children }) => <li className="text-slate-300">{children}</li>,

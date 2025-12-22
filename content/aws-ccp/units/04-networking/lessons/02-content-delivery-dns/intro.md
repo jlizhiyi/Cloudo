@@ -29,4 +29,5 @@ A fully managed service to create, publish, and secure APIs at any scale.
 *   **Use case:** Create a REST API that triggers Lambda functions (serverless backend).
 *   **Features:** Throttling, caching, authentication, and monitoring.
 
-**NOTE:** CloudFront + S3 is a classic pattern for hosting static websites globally with low latency and low cost.
+> ### HELPFUL NOTE:
+> CloudFront + S3 is a classic pattern for hosting static websites globally with low latency and low cost.

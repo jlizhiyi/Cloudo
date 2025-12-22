@@ -1,0 +1,8 @@
+{
+  "dir": "05-database-services",
+  "title": "Database Services",
+  "lessons": [
+    { "slug": "01-relational-databases", "title": "Relational Databases" },
+    { "slug": "02-nosql-databases", "title": "NoSQL & Specialty Databases" }
+  ]
+}

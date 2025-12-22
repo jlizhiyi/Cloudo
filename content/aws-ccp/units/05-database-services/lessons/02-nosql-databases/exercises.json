@@ -1,0 +1,94 @@
+[
+  {
+    "type": "multiple",
+    "question": "A gaming company needs a database for their leaderboard that can handle millions of requests per second with single-digit millisecond latency. Which service fits best?",
+    "options": [
+      "Amazon RDS",
+      "Amazon Redshift",
+      "Amazon DynamoDB",
+      "Amazon S3"
+    ],
+    "correct": 2,
+    "explanation": "DynamoDB is a NoSQL database designed for high-throughput, low-latency workloads like gaming leaderboards."
+  },
+  {
+    "type": "multiple",
+    "question": "Your team wants to speed up a web application by caching frequently accessed database queries. Which service should you use?",
+    "options": [
+      "Amazon DynamoDB",
+      "Amazon ElastiCache",
+      "Amazon Redshift",
+      "Amazon Aurora"
+    ],
+    "correct": 1,
+    "explanation": "ElastiCache is an in-memory caching service (Redis/Memcached) that provides microsecond latency for frequently accessed data."
+  },
+  {
+    "type": "matching",
+    "question": "Match the database to its best use case:",
+    "pairs": [
+      ["DynamoDB", "Shopping cart with millions of concurrent users"],
+      ["Redshift", "Business intelligence reports on petabytes of sales data"],
+      ["ElastiCache", "Caching session data for sub-millisecond access"],
+      ["Neptune", "Social network with complex relationship queries"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "Amazon ___ is a managed data warehouse service optimized for analytics and business intelligence.",
+    "answers": ["Redshift", "redshift"],
+    "explanation": "Redshift uses columnar storage and parallel processing to run complex analytical queries on petabytes of data."
+  },
+  {
+    "type": "multiple",
+    "question": "Which DynamoDB capacity mode should you choose for unpredictable traffic patterns?",
+    "options": [
+      "Provisioned capacity",
+      "On-demand capacity",
+      "Reserved capacity",
+      "Spot capacity"
+    ],
+    "correct": 1,
+    "explanation": "On-demand capacity automatically scales to accommodate your workload and charges per request—ideal for unpredictable traffic."
+  },
+  {
+    "type": "multiple",
+    "question": "You need to track financial transactions with a complete, immutable history that is cryptographically verifiable. Which database should you use?",
+    "options": [
+      "Amazon DynamoDB",
+      "Amazon QLDB",
+      "Amazon Neptune",
+      "Amazon Redshift"
+    ],
+    "correct": 1,
+    "explanation": "QLDB (Quantum Ledger Database) provides an immutable, transparent, and cryptographically verifiable transaction log."
+  },
+  {
+    "type": "multiple",
+    "question": "Which caching engine does Amazon ElastiCache support?",
+    "options": [
+      "MySQL and PostgreSQL",
+      "Redis and Memcached",
+      "MongoDB and Cassandra",
+      "Oracle and SQL Server"
+    ],
+    "correct": 1,
+    "explanation": "ElastiCache supports two popular in-memory engines: Redis (feature-rich) and Memcached (simple, multi-threaded)."
+  },
+  {
+    "type": "matching",
+    "question": "Match the database type to the AWS service:",
+    "pairs": [
+      ["Key-Value / Document", "DynamoDB"],
+      ["Graph", "Neptune"],
+      ["In-Memory Cache", "ElastiCache"],
+      ["Data Warehouse", "Redshift"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "For multi-region, multi-active replication in DynamoDB, you should enable ___ Tables.",
+    "answers": ["Global", "global"],
+    "explanation": "DynamoDB Global Tables automatically replicate data across multiple AWS Regions for low-latency global access."
+  }
+]
