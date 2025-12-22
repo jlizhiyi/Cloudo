@@ -1,0 +1,8 @@
+{
+  "dir": "04-networking",
+  "title": "Networking & Content Delivery",
+  "lessons": [
+    { "slug": "01-vpc-basics", "title": "VPC Fundamentals" },
+    { "slug": "02-content-delivery-dns", "title": "Content Delivery & DNS" }
+  ]
+}
