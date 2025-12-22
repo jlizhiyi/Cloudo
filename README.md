@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# Cloudo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Cloudo** is a gamified, micro-learning platform designed to help engineers master cloud certifications (AWS, Azure, GCP, Snowflake, and more). Inspired by Duolingo, it breaks down complex cloud architecture into bite-sized lessons, interactive exercises, and high-stakes unit quizzes.
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Lessons follow a linear course path, and are split into technical intros (Markdown) and 5-question interactive sessions. A 70% passing threshold is required for both lessons and unit quizzes to unlock further content. Users can earn experience points for every correct answer, persisted via `localStorage`.
 
-## React Compiler
+---
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend:** React 18 (Vite)
+- **Styling:** Tailwind CSS (with @tailwindcss/typography)
+- **Icons:** Lucide React
+- **Content Parsing:** 
+  - `react-markdown` + `remark-gfm` (GitHub Flavored Markdown for Tables)
+  - `import.meta.glob` (Vite's dynamic filesystem injection)
+- **Routing:** React Router v6
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/cloudo.git
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Install dependencies
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+If you encounter vfile or remark-gfm type mismatches, ensure you are using the following stable versions:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install react-markdown@8.0.7 remark-gfm@3.0.1
 ```
+
+Run developmental server:
+
+```bash
+npm run dev
+```
+
+---
+
+## To-do
+
+- Add more units
+- Overhaul current structure to narrow individual lesson topics and increase lesson count per unit
+- Add mock AWS-CCP exams (65 questions)
