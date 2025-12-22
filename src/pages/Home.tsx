@@ -33,7 +33,7 @@ export default function Home() {
                 <div className="flex-1 min-w-0">
                   <h2 className="text-white font-semibold truncate">{course.title}</h2>
                   <p className="text-slate-400 text-sm truncate">{course.description}</p>
-                  <div className="flex items-center gap-2 mt-2">
+                  {/*<div className="flex items-center gap-2 mt-2">
                     <div className="h-1.5 flex-1 bg-slate-700 rounded-full overflow-hidden">
                       <div 
                         className="h-full bg-linear-to-r from-sky-500 to-blue-500 rounded-full transition-all"
@@ -42,6 +42,9 @@ export default function Home() {
                     </div>
                     <span className="text-slate-500 text-xs">{pct}%</span>
                   </div>
+                  
+                  NOTE: Course progress currently bugged, e.g. shows percentages over 100%. Disabling for now.
+                  */}
                 </div>
                 <ChevronRight className="w-5 h-5 text-slate-500" />
               </div>
