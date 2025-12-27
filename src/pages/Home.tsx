@@ -13,9 +13,9 @@ export default function Home() {
         {Object.entries(courses).map(([id, course]) => {
           const saved = localStorage.getItem(`cloudo-progress-${id}`);
           const progress: CourseProgress = saved ? JSON.parse(saved) : {};
-          const totalLessons = course.units.reduce((acc, u) => acc + u.lessons.length, 0);
-          const completedLessons = Object.values(progress).filter(p => p?.completed).length;
-          const pct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
+          // const totalLessons = course.units.reduce((acc, u) => acc + u.lessons.length, 0);
+          // const completedLessons = Object.values(progress).filter(p => p?.completed).length;
+          // const pct = totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0;
           
           return (
             <Link

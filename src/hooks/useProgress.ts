@@ -65,9 +65,14 @@ export function useProgress(courseId: string) {
     return progress[lastLessonId]?.completed === true;
   }, [courseId, progress]);
 
+  const isReviewUnlocked = useCallback((unitIdx: number): boolean => {
+    const quizKey = `unit-quiz-${unitIdx}`;
+    return progress[quizKey]?.completed === true;
+  }, [progress]);
+
   const resetProgress = useCallback(() => {
     setProgress({});
   }, []);
 
-  return { progress, markCompleted, markQuizCompleted, isLessonUnlocked, isQuizUnlocked, resetProgress };
+  return { progress, markCompleted, markQuizCompleted, isLessonUnlocked, isQuizUnlocked, isReviewUnlocked, resetProgress };
 }

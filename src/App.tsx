@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import CoursePath from './pages/CoursePath';
 import Lesson from './pages/Lesson';
 import UnitQuiz from './pages/UnitQuiz';
+import GeneralReview from './pages/GeneralReview';
 import Header from './components/Header';
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="/course/:courseId" element={<CoursePath />} />
             <Route path="/course/:courseId/lesson/:lessonId" element={<Lesson addXp={addXp} />} />
             <Route path="/course/:courseId/unit/:unitIdx/quiz" element={<UnitQuiz addXp={addXp} />} />
+            <Route path="/course/:courseId/unit/:unitIdx/review" element={<GeneralReview addXp={addXp} />} />
           </Routes>
         </main>
       </div>
