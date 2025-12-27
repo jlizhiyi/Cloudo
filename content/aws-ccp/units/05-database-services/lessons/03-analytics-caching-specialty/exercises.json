@@ -1,0 +1,152 @@
+[
+  {
+    "type": "multiple",
+    "question": "A web application needs to cache frequently accessed database queries to reduce latency and database load. Which service should you use?",
+    "options": [
+      "Amazon DynamoDB",
+      "Amazon ElastiCache",
+      "Amazon Redshift",
+      "Amazon Aurora"
+    ],
+    "correct": 1,
+    "explanation": "ElastiCache is an in-memory caching service (Redis/Memcached) that provides sub-millisecond latency for cached data."
+  },
+  {
+    "type": "multiple",
+    "question": "A company needs to analyze petabytes of historical sales data for business intelligence reports. Which service is best suited?",
+    "options": [
+      "Amazon RDS",
+      "Amazon DynamoDB",
+      "Amazon Redshift",
+      "Amazon ElastiCache"
+    ],
+    "correct": 2,
+    "explanation": "Redshift is a data warehouse optimized for analytical queries (OLAP) on large datasets using columnar storage and MPP."
+  },
+  {
+    "type": "matching",
+    "question": "Match the database service to its primary use case:",
+    "pairs": [
+      ["ElastiCache", "In-memory caching for sub-millisecond latency"],
+      ["Redshift", "Data warehouse for business analytics"],
+      ["DocumentDB", "MongoDB-compatible document storage"],
+      ["Neptune", "Graph database for relationship queries"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "Amazon ___ is a fully managed data warehouse service that uses columnar storage for analytics.",
+    "answers": ["Redshift", "redshift"],
+    "explanation": "Redshift is optimized for analytical queries with columnar storage and massively parallel processing (MPP)."
+  },
+  {
+    "type": "multiple",
+    "question": "Which ElastiCache engine should you choose if you need advanced features like replication, persistence, and Pub/Sub?",
+    "options": [
+      "Memcached",
+      "Redis",
+      "DynamoDB",
+      "Aurora"
+    ],
+    "correct": 1,
+    "explanation": "Redis offers rich features including persistence, replication, clustering, and Pub/Sub. Memcached is simpler and purely for caching."
+  },
+  {
+    "type": "multiple",
+    "question": "A company needs to migrate their on-premises Oracle database to Amazon Aurora with minimal downtime. Which service should they use?",
+    "options": [
+      "AWS DataSync",
+      "AWS Database Migration Service (DMS)",
+      "AWS Transfer Family",
+      "AWS Snowball"
+    ],
+    "correct": 1,
+    "explanation": "DMS migrates databases to AWS with minimal downtime. It supports heterogeneous migrations like Oracle to Aurora."
+  },
+  {
+    "type": "multiple",
+    "question": "Which database service provides an immutable, cryptographically verifiable transaction log?",
+    "options": [
+      "Amazon Neptune",
+      "Amazon QLDB",
+      "Amazon Timestream",
+      "Amazon DocumentDB"
+    ],
+    "correct": 1,
+    "explanation": "QLDB (Quantum Ledger Database) provides an immutable, transparent journal for applications that need verifiable transaction history."
+  },
+  {
+    "type": "matching",
+    "question": "Match the specialty database to its data model:",
+    "pairs": [
+      ["Neptune", "Graph (nodes and relationships)"],
+      ["Timestream", "Time-series data"],
+      ["QLDB", "Ledger (immutable log)"],
+      ["Keyspaces", "Wide-column (Cassandra-compatible)"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "A social media company needs to query complex relationships between users (friends of friends, mutual connections). Which database is best?",
+    "options": [
+      "Amazon RDS",
+      "Amazon DynamoDB",
+      "Amazon Neptune",
+      "Amazon Redshift"
+    ],
+    "correct": 2,
+    "explanation": "Neptune is a graph database optimized for storing and querying highly connected data with complex relationships."
+  },
+  {
+    "type": "fillblank",
+    "question": "AWS ___ helps migrate databases to AWS and can perform continuous replication for disaster recovery.",
+    "answers": ["DMS", "Database Migration Service"],
+    "explanation": "DMS supports one-time migrations and ongoing replication to keep source and target databases synchronized."
+  },
+  {
+    "type": "multiple",
+    "question": "What is the difference between Amazon Redshift and Amazon RDS?",
+    "options": [
+      "Redshift is for transactional workloads; RDS is for analytics",
+      "Redshift is for analytical workloads (OLAP); RDS is for transactional workloads (OLTP)",
+      "Redshift is NoSQL; RDS is relational",
+      "There is no difference"
+    ],
+    "correct": 1,
+    "explanation": "Redshift is a data warehouse for analytics (OLAP). RDS is for transactional applications (OLTP) like e-commerce or CRM."
+  },
+  {
+    "type": "multiple",
+    "question": "Which service allows you to query data directly in Amazon S3 using Redshift without loading it into tables?",
+    "options": [
+      "Redshift Serverless",
+      "Redshift Spectrum",
+      "Amazon Athena",
+      "AWS Glue"
+    ],
+    "correct": 1,
+    "explanation": "Redshift Spectrum extends Redshift queries to data in S3, enabling you to query exabytes of data without loading it."
+  },
+  {
+    "type": "multiple",
+    "question": "An IoT application needs to store and analyze billions of time-stamped sensor readings efficiently. Which database is purpose-built for this?",
+    "options": [
+      "Amazon DynamoDB",
+      "Amazon Timestream",
+      "Amazon RDS",
+      "Amazon Neptune"
+    ],
+    "correct": 1,
+    "explanation": "Timestream is a purpose-built time-series database optimized for storing and analyzing time-stamped IoT and operational data."
+  },
+  {
+    "type": "matching",
+    "question": "Match the scenario to the best database service:",
+    "pairs": [
+      ["Cache database queries for faster access", "Amazon ElastiCache"],
+      ["Run complex analytics on historical data", "Amazon Redshift"],
+      ["Migrate Oracle database to Aurora", "AWS DMS"],
+      ["Store user profiles in JSON documents", "Amazon DocumentDB"]
+    ]
+  }
+]

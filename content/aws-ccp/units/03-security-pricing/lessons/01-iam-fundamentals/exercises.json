@@ -1,0 +1,118 @@
+[
+  {
+    "type": "multiple",
+    "question": "Which IAM identity should you use to grant an EC2 instance permission to read from an S3 bucket?",
+    "options": [
+      "IAM User with access keys stored on the instance",
+      "IAM Group",
+      "IAM Role attached to the EC2 instance",
+      "Root user credentials"
+    ],
+    "correct": 2,
+    "explanation": "IAM Roles provide temporary credentials to AWS services. Never store long-term access keys on EC2 instances."
+  },
+  {
+    "type": "multiple",
+    "question": "What is the recommended way to manage permissions for multiple developers who need the same access?",
+    "options": [
+      "Attach the same policy to each user individually",
+      "Create an IAM Group, attach the policy to the group, add users to the group",
+      "Share one IAM user account among all developers",
+      "Use the root account for all developers"
+    ],
+    "correct": 1,
+    "explanation": "Groups simplify permission management. Attach policies to groups, then add/remove users as needed."
+  },
+  {
+    "type": "matching",
+    "question": "Match the IAM concept to its description:",
+    "pairs": [
+      ["IAM User", "An identity for a person or application"],
+      ["IAM Group", "A collection of users with shared permissions"],
+      ["IAM Role", "Temporary credentials assumed by services or users"],
+      ["IAM Policy", "JSON document defining permissions"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "The security principle of granting only the permissions needed to perform a task is called the Principle of ___ Privilege.",
+    "answers": ["Least", "least"],
+    "explanation": "Least Privilege minimizes security risk by ensuring users and services have only the access they absolutely need."
+  },
+  {
+    "type": "multiple",
+    "question": "Which of the following tasks can ONLY be performed by the root user?",
+    "options": [
+      "Creating IAM users",
+      "Launching EC2 instances",
+      "Closing the AWS account",
+      "Creating S3 buckets"
+    ],
+    "correct": 2,
+    "explanation": "Closing the AWS account, changing account settings, and restoring IAM permissions are root-only tasks."
+  },
+  {
+    "type": "multiple",
+    "question": "What does MFA add to the authentication process?",
+    "options": [
+      "Encryption for data at rest",
+      "A second factor beyond the password",
+      "Automatic password rotation",
+      "Network-level security"
+    ],
+    "correct": 1,
+    "explanation": "MFA requires something you know (password) AND something you have (MFA device), making unauthorized access much harder."
+  },
+  {
+    "type": "multiple",
+    "question": "An IAM policy has the following: Effect=Allow, Action=s3:*, Resource=*. What does this grant?",
+    "options": [
+      "Read-only access to one S3 bucket",
+      "Full access to all S3 resources",
+      "Access denied to S3",
+      "Access to EC2 only"
+    ],
+    "correct": 1,
+    "explanation": "Action s3:* means all S3 actions, and Resource * means all resources. This grants full S3 access."
+  },
+  {
+    "type": "matching",
+    "question": "Match the best practice to its reasoning:",
+    "pairs": [
+      ["Enable MFA on root account", "Protect the most powerful account"],
+      ["Use roles for EC2", "Avoid storing long-term credentials on instances"],
+      ["Use groups for permissions", "Simplify management as team changes"],
+      ["Delete unused credentials", "Reduce attack surface"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "IAM is a ___ service, meaning users and policies apply to all AWS regions.",
+    "answers": ["global", "Global"],
+    "explanation": "Unlike most AWS services, IAM is not region-specific. Your IAM configuration applies globally across all regions."
+  },
+  {
+    "type": "multiple",
+    "question": "A company wants employees to log in with their corporate credentials (Active Directory) without creating individual IAM users. What should they use?",
+    "options": [
+      "IAM Groups",
+      "IAM Access Keys",
+      "IAM Identity Federation with Roles",
+      "Root user sharing"
+    ],
+    "correct": 2,
+    "explanation": "Identity Federation allows users to authenticate with an external identity provider and assume IAM roles for AWS access."
+  },
+  {
+    "type": "multiple",
+    "question": "Which policy type is created and fully managed by AWS?",
+    "options": [
+      "Inline Policy",
+      "Customer Managed Policy",
+      "AWS Managed Policy",
+      "Resource-based Policy"
+    ],
+    "correct": 2,
+    "explanation": "AWS Managed Policies are pre-built by AWS for common use cases like AmazonS3ReadOnlyAccess or AdministratorAccess."
+  }
+]

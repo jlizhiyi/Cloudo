@@ -1,0 +1,130 @@
+[
+  {
+    "type": "multiple",
+    "question": "A company needs a dedicated, private connection from their data center to AWS that does NOT traverse the public internet. Which service should they use?",
+    "options": [
+      "AWS Site-to-Site VPN",
+      "AWS Direct Connect",
+      "VPC Peering",
+      "Internet Gateway"
+    ],
+    "correct": 1,
+    "explanation": "Direct Connect provides a dedicated physical connection from your data center to AWS, bypassing the public internet entirely."
+  },
+  {
+    "type": "multiple",
+    "question": "VPC-A is peered with VPC-B, and VPC-B is peered with VPC-C. Can VPC-A communicate with VPC-C through VPC-B?",
+    "options": [
+      "Yes, automatically through transitive routing",
+      "Yes, but only if all three VPCs are in the same region",
+      "No, VPC peering is not transitive",
+      "No, unless you use a NAT Gateway"
+    ],
+    "correct": 2,
+    "explanation": "VPC peering is NOT transitive. Each VPC pair that needs to communicate must have its own peering connection."
+  },
+  {
+    "type": "matching",
+    "question": "Match the connectivity option to its description:",
+    "pairs": [
+      ["VPC Peering", "Private connection between two VPCs"],
+      ["Transit Gateway", "Central hub for connecting multiple VPCs and on-premises"],
+      ["Direct Connect", "Dedicated physical line to AWS"],
+      ["Site-to-Site VPN", "Encrypted tunnel over the public internet"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "AWS ___ provides a central hub that simplifies connecting multiple VPCs and on-premises networks with transitive routing.",
+    "answers": ["Transit Gateway", "transit gateway"],
+    "explanation": "Transit Gateway acts as a cloud router, enabling transitive connectivity between all attached networks."
+  },
+  {
+    "type": "multiple",
+    "question": "A company needs hybrid connectivity to AWS within hours, not weeks. Budget is limited. What should they use?",
+    "options": [
+      "AWS Direct Connect",
+      "AWS Site-to-Site VPN",
+      "AWS Transit Gateway",
+      "VPC Peering"
+    ],
+    "correct": 1,
+    "explanation": "Site-to-Site VPN can be set up in hours using your existing internet connection. Direct Connect takes weeks to provision."
+  },
+  {
+    "type": "multiple",
+    "question": "An EC2 instance in a private subnet needs to access S3 without using a NAT Gateway. What should you use?",
+    "options": [
+      "Internet Gateway",
+      "VPC Gateway Endpoint",
+      "VPC Interface Endpoint",
+      "AWS Direct Connect"
+    ],
+    "correct": 1,
+    "explanation": "A Gateway Endpoint allows private access to S3 (and DynamoDB) without NAT Gateway. It's free and uses route table entries."
+  },
+  {
+    "type": "matching",
+    "question": "Match the use case to the best solution:",
+    "pairs": [
+      ["Large data transfers with consistent low latency", "AWS Direct Connect"],
+      ["Quick setup, encrypted over internet", "AWS Site-to-Site VPN"],
+      ["10 VPCs need to communicate with each other", "AWS Transit Gateway"],
+      ["Two VPCs need a simple private connection", "VPC Peering"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "Which type of VPC Endpoint is used for accessing S3 privately?",
+    "options": [
+      "Interface Endpoint",
+      "Gateway Endpoint",
+      "Service Endpoint",
+      "NAT Endpoint"
+    ],
+    "correct": 1,
+    "explanation": "S3 and DynamoDB use Gateway Endpoints. Most other AWS services use Interface Endpoints (powered by PrivateLink)."
+  },
+  {
+    "type": "fillblank",
+    "question": "AWS Direct Connect provides connection speeds of 1 Gbps, 10 Gbps, or ___ Gbps.",
+    "answers": ["100", "100 Gbps"],
+    "explanation": "Direct Connect offers dedicated connections at 1, 10, or 100 Gbps for high-bandwidth requirements."
+  },
+  {
+    "type": "multiple",
+    "question": "What are the two components required for an AWS Site-to-Site VPN?",
+    "options": [
+      "Internet Gateway and NAT Gateway",
+      "Virtual Private Gateway and Customer Gateway",
+      "Transit Gateway and Direct Connect Gateway",
+      "VPC Endpoint and Route Table"
+    ],
+    "correct": 1,
+    "explanation": "Site-to-Site VPN requires a Virtual Private Gateway (AWS side) and a Customer Gateway (your on-premises router)."
+  },
+  {
+    "type": "multiple",
+    "question": "Remote employees need to securely access resources in a private VPC from their laptops. Which service enables this?",
+    "options": [
+      "AWS Site-to-Site VPN",
+      "AWS Client VPN",
+      "AWS Direct Connect",
+      "VPC Peering"
+    ],
+    "correct": 1,
+    "explanation": "AWS Client VPN allows individual users to establish secure VPN connections to AWS from their devices."
+  },
+  {
+    "type": "multiple",
+    "question": "What is a key requirement for establishing VPC Peering between two VPCs?",
+    "options": [
+      "They must be in the same region",
+      "They must be in the same AWS account",
+      "Their CIDR blocks must not overlap",
+      "They must use the same Internet Gateway"
+    ],
+    "correct": 2,
+    "explanation": "VPC peering requires non-overlapping CIDR blocks. Peering works across regions and accounts."
+  }
+]

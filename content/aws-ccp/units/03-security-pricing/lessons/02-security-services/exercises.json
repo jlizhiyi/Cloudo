@@ -1,0 +1,130 @@
+[
+  {
+    "type": "multiple",
+    "question": "Which AWS service provides intelligent threat detection by analyzing CloudTrail logs, VPC Flow Logs, and DNS logs?",
+    "options": [
+      "Amazon Inspector",
+      "Amazon GuardDuty",
+      "AWS WAF",
+      "AWS Shield"
+    ],
+    "correct": 1,
+    "explanation": "GuardDuty uses machine learning to analyze logs and detect threats like compromised instances, reconnaissance, and cryptocurrency mining."
+  },
+  {
+    "type": "multiple",
+    "question": "A company needs to protect their web application from SQL injection and cross-site scripting (XSS) attacks. Which service should they use?",
+    "options": [
+      "AWS Shield",
+      "Amazon GuardDuty",
+      "AWS WAF",
+      "Amazon Inspector"
+    ],
+    "correct": 2,
+    "explanation": "AWS WAF (Web Application Firewall) filters HTTP/HTTPS traffic and can block common attack patterns like SQL injection and XSS."
+  },
+  {
+    "type": "matching",
+    "question": "Match the security service to its function:",
+    "pairs": [
+      ["GuardDuty", "Threat detection using machine learning"],
+      ["Inspector", "Vulnerability scanning for EC2 and containers"],
+      ["Macie", "Discover sensitive data (PII) in S3"],
+      ["Shield", "DDoS protection"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "AWS ___ logs all API calls made in your AWS account for auditing and compliance.",
+    "answers": ["CloudTrail", "cloudtrail"],
+    "explanation": "CloudTrail records who made API calls, when, from where, and what was affected—essential for security auditing."
+  },
+  {
+    "type": "multiple",
+    "question": "Which AWS service should you use to create and manage encryption keys for encrypting data in S3, EBS, and RDS?",
+    "options": [
+      "AWS Secrets Manager",
+      "AWS KMS",
+      "AWS CloudHSM",
+      "Amazon Macie"
+    ],
+    "correct": 1,
+    "explanation": "AWS KMS (Key Management Service) creates and manages encryption keys that integrate with most AWS services for data encryption."
+  },
+  {
+    "type": "multiple",
+    "question": "Where can you download AWS compliance reports such as SOC 2 and PCI DSS?",
+    "options": [
+      "AWS Config",
+      "AWS Artifact",
+      "AWS Trusted Advisor",
+      "AWS CloudTrail"
+    ],
+    "correct": 1,
+    "explanation": "AWS Artifact is a portal for accessing AWS compliance documentation, certifications, and agreements."
+  },
+  {
+    "type": "multiple",
+    "question": "Which tier of AWS Shield is automatically enabled for all AWS customers at no additional cost?",
+    "options": [
+      "Shield Basic",
+      "Shield Standard",
+      "Shield Advanced",
+      "Shield Enterprise"
+    ],
+    "correct": 1,
+    "explanation": "AWS Shield Standard is free and automatically protects all AWS customers against common DDoS attacks."
+  },
+  {
+    "type": "matching",
+    "question": "Match the service to what it protects or manages:",
+    "pairs": [
+      ["KMS", "Encryption keys"],
+      ["Secrets Manager", "Database passwords and API keys"],
+      ["Certificate Manager", "SSL/TLS certificates"],
+      ["CloudHSM", "Hardware security modules for compliance"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "A security team needs to see a centralized view of security findings from GuardDuty, Inspector, and Macie across multiple accounts. Which service provides this?",
+    "options": [
+      "AWS CloudTrail",
+      "AWS Security Hub",
+      "Amazon Detective",
+      "AWS Config"
+    ],
+    "correct": 1,
+    "explanation": "Security Hub aggregates and prioritizes security findings from multiple AWS security services into a single dashboard."
+  },
+  {
+    "type": "fillblank",
+    "question": "AWS ___ tracks configuration changes to your resources over time and can evaluate compliance against rules.",
+    "answers": ["Config", "config"],
+    "explanation": "AWS Config records resource configurations and changes, enabling compliance auditing and change tracking."
+  },
+  {
+    "type": "multiple",
+    "question": "A company stores customer data in S3 and needs to automatically identify buckets containing personally identifiable information (PII). Which service should they use?",
+    "options": [
+      "Amazon GuardDuty",
+      "Amazon Inspector",
+      "Amazon Macie",
+      "AWS Config"
+    ],
+    "correct": 2,
+    "explanation": "Macie uses machine learning to discover, classify, and protect sensitive data like PII stored in Amazon S3."
+  },
+  {
+    "type": "multiple",
+    "question": "Which service helps investigate the root cause of security findings by visualizing related resources and activities?",
+    "options": [
+      "Amazon GuardDuty",
+      "AWS Security Hub",
+      "Amazon Detective",
+      "AWS CloudTrail"
+    ],
+    "correct": 2,
+    "explanation": "Amazon Detective analyzes and visualizes security data to help you investigate and identify the root cause of security issues."
+  }
+]

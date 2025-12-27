@@ -1,0 +1,106 @@
+[
+  {
+    "type": "multiple",
+    "question": "According to the Shared Responsibility Model, who is responsible for patching the guest operating system on an EC2 instance?",
+    "options": [
+      "AWS",
+      "The Customer",
+      "Both equally",
+      "The OS vendor (Microsoft/Linux)"
+    ],
+    "correct": 1,
+    "explanation": "For IaaS services like EC2, the customer is responsible for managing the guest OS, including security patches and updates."
+  },
+  {
+    "type": "multiple",
+    "question": "Who is responsible for patching the database engine in Amazon RDS?",
+    "options": [
+      "AWS",
+      "The Customer",
+      "The database vendor",
+      "No one—it's automatic"
+    ],
+    "correct": 0,
+    "explanation": "RDS is a managed service. AWS handles the underlying infrastructure and database engine patching. The customer schedules the maintenance window."
+  },
+  {
+    "type": "matching",
+    "question": "Categorize each task as AWS or Customer responsibility:",
+    "pairs": [
+      ["Physical security of data centers", "AWS"],
+      ["Configuring security group rules", "Customer"],
+      ["Patching the hypervisor", "AWS"],
+      ["Encrypting data stored in S3", "Customer"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "AWS is responsible for security ___ the cloud, while customers are responsible for security ___ the cloud.",
+    "answers": ["of, in", "OF, IN"],
+    "explanation": "AWS secures the infrastructure (of), customers secure their data and configurations (in)."
+  },
+  {
+    "type": "multiple",
+    "question": "A customer accidentally makes an S3 bucket public and sensitive data is exposed. Who is at fault?",
+    "options": [
+      "AWS—they should prevent this",
+      "The Customer—they configured the permissions",
+      "Both equally",
+      "Amazon S3 service team"
+    ],
+    "correct": 1,
+    "explanation": "Access configuration is the customer's responsibility. AWS provides the tools (bucket policies, ACLs), but the customer must configure them correctly."
+  },
+  {
+    "type": "multiple",
+    "question": "Which of the following is AWS responsible for?",
+    "options": [
+      "Enabling MFA for IAM users",
+      "Configuring VPC network ACLs",
+      "Decommissioning and destroying old storage hardware",
+      "Setting up password rotation policies"
+    ],
+    "correct": 2,
+    "explanation": "AWS handles all physical hardware lifecycle, including secure destruction of storage devices when they're retired."
+  },
+  {
+    "type": "matching",
+    "question": "Match the service type to the customer's level of responsibility:",
+    "pairs": [
+      ["EC2 (IaaS)", "OS patching, firewall, application security"],
+      ["RDS (Managed)", "Data, user access, backup scheduling"],
+      ["Lambda (Serverless)", "Code, permissions, environment variables"],
+      ["S3 (Storage)", "Data, bucket policies, encryption settings"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "An EC2 instance is compromised because security groups allowed SSH from 0.0.0.0/0 (the entire internet). Who is responsible?",
+    "options": [
+      "AWS",
+      "The Customer",
+      "The hacker",
+      "Amazon EC2 team"
+    ],
+    "correct": 1,
+    "explanation": "Security group configuration is the customer's responsibility. Allowing unrestricted SSH access is a configuration mistake."
+  },
+  {
+    "type": "fillblank",
+    "question": "When using managed services like RDS, the customer's responsibility ___ compared to running a database on EC2.",
+    "answers": ["decreases", "Decreases", "is reduced", "reduces"],
+    "explanation": "Managed services shift more responsibility to AWS (OS, patching, backups), reducing the customer's operational burden."
+  },
+  {
+    "type": "multiple",
+    "question": "Which of the following is the customer responsible for in ALL service models (IaaS, PaaS, SaaS)?",
+    "options": [
+      "Patching the operating system",
+      "Physical data center security",
+      "Managing their data and access to it",
+      "Maintaining the network infrastructure"
+    ],
+    "correct": 2,
+    "explanation": "Regardless of service type, customers are always responsible for their data and controlling who can access it."
+  }
+]

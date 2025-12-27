@@ -1,8 +1,10 @@
+
 {
   "dir": "05-database-services",
   "title": "Database Services",
   "lessons": [
-    { "slug": "01-relational-databases", "title": "Relational Databases" },
-    { "slug": "02-nosql-databases", "title": "NoSQL & Specialty Databases" }
+    { "slug": "01-relational-databases", "title": "Relational Databases (RDS & Aurora)" },
+    { "slug": "02-dynamodb", "title": "Amazon DynamoDB" },
+    { "slug": "03-analytics-caching-specialty", "title": "Analytics, Caching & Purpose-Built Databases" }
   ]
 }

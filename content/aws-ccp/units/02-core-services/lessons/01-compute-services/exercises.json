@@ -1,88 +1,106 @@
 [
   {
     "type": "multiple",
-    "question": "You need a server where you have full control over the Operating System (OS) and kernel configurations. Which compute option should you choose?",
+    "question": "A developer wants to deploy a web application without managing servers, patching, or scaling. They just want to upload code. Which service should they use?",
     "options": [
-      "Serverless (FaaS)",
-      "Virtual Machines (Instances)",
-      "Platform as a Service",
-      "SaaS"
+      "Amazon EC2",
+      "AWS Elastic Beanstalk",
+      "Amazon ECS",
+      "AWS Outposts"
     ],
     "correct": 1,
-    "explanation": "Virtual Machines (like EC2) provide Infrastructure as a Service (IaaS), giving you full control over the OS and configuration."
+    "explanation": "Elastic Beanstalk is a PaaS that handles provisioning, load balancing, scaling, and patching. You just upload your code."
   },
   {
     "type": "multiple",
-    "question": "Which of the following is a characteristic of Serverless computing?",
+    "question": "Which AWS service lets you run code in response to events without provisioning or managing servers?",
     "options": [
-      "You pay for servers even when they are idle",
-      "You must manually patch the operating system",
-      "You only pay for the compute time consumed by code execution",
-      "Scaling must be managed manually"
+      "Amazon EC2",
+      "AWS Lambda",
+      "Amazon ECS",
+      "AWS Batch"
     ],
-    "correct": 2,
-    "explanation": "With serverless, you don't provision infrastructure. You are charged only when your code is running, not for idle time."
+    "correct": 1,
+    "explanation": "Lambda is AWS's serverless compute service. You upload code, and it runs in response to triggers like API calls or S3 uploads."
   },
   {
     "type": "matching",
-    "question": "Match the compute type to the concept:",
+    "question": "Match the service to its description:",
     "pairs": [
-      ["Virtual Machine", "Resizable compute capacity where you manage the OS"],
-      ["Container", "Standardized unit packaging code and dependencies"],
-      ["Serverless", "Run code without provisioning or managing servers"],
-      ["Auto Scaling", "Automatically increasing or decreasing server count"]
+      ["EC2", "Virtual machines with full OS control"],
+      ["Lambda", "Serverless functions triggered by events"],
+      ["Fargate", "Serverless compute engine for containers"],
+      ["Lightsail", "Simple VPS with predictable monthly pricing"]
     ]
+  },
+  {
+    "type": "multiple",
+    "question": "A company wants to run Docker containers but does NOT want to manage the underlying EC2 instances. Which combination should they use?",
+    "options": [
+      "ECS with EC2 launch type",
+      "ECS with Fargate launch type",
+      "Lambda with Docker",
+      "Elastic Beanstalk with containers"
+    ],
+    "correct": 1,
+    "explanation": "Fargate is a serverless compute engine for containers. You don't provision or manage EC2 instances—AWS handles the infrastructure."
   },
   {
     "type": "fillblank",
-    "question": "With ___ computing, the cloud provider handles all infrastructure management, allowing developers to focus solely on code.",
-    "answers": ["serverless", "Serverless"],
-    "explanation": "Serverless abstracts the underlying infrastructure entirely."
+    "question": "Amazon ___ is a managed Kubernetes service for running containerized applications.",
+    "answers": ["EKS", "Elastic Kubernetes Service"],
+    "explanation": "EKS (Elastic Kubernetes Service) runs Kubernetes on AWS without needing to install and operate your own control plane."
   },
   {
     "type": "multiple",
-    "question": "You want to run a small script every day at 8 AM to process a file. You do not want to pay for a server to sit idle for the other 23 hours. What should you use?",
+    "question": "Which EC2 instance type category is BEST for a memory-intensive database application?",
     "options": [
-      "A Virtual Machine (EC2)",
-      "A Physical Server",
-      "Serverless functions (e.g. Lambda)",
-      "A Dedicated Host"
+      "General Purpose (T3, M5)",
+      "Compute Optimized (C5)",
+      "Memory Optimized (R5, X1)",
+      "Storage Optimized (I3, D2)"
     ],
     "correct": 2,
-    "explanation": "Serverless functions are event-driven and you only pay for the time the code runs. This is the most cost-effective solution for short, scheduled tasks."
+    "explanation": "Memory Optimized instances (R5, X1) are designed for workloads that process large datasets in memory, like databases and caching."
   },
   {
     "type": "multiple",
-    "question": "Which statement about Containers is true?",
+    "question": "What is the maximum execution time for a single AWS Lambda function invocation?",
     "options": [
-      "They are slower to start than Virtual Machines",
-      "They package code and dependencies into a single unit",
-      "They require a dedicated physical server for each container",
-      "They cannot run in the cloud"
+      "5 minutes",
+      "15 minutes",
+      "1 hour",
+      "No limit"
     ],
     "correct": 1,
-    "explanation": "Containers wrap code and dependencies together, ensuring consistency across environments. They generally start much faster than VMs."
-  },
-  {
-    "type": "multiple",
-    "question": "Which service helps you handle sudden spikes in web traffic by adding more instances automatically?",
-    "options": [
-      "Auto Scaling",
-      "Object Storage",
-      "Content Delivery Network",
-      "Databases"
-    ],
-    "correct": 0,
-    "explanation": "Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance."
+    "explanation": "Lambda functions can run for a maximum of 15 minutes. For longer workloads, consider EC2, Batch, or Step Functions."
   },
   {
     "type": "matching",
-    "question": "Who manages what?",
+    "question": "Match the use case to the best service:",
     "pairs": [
-      ["Virtual Machine", "You manage the Guest OS"],
-      ["Serverless", "Provider manages the OS"],
-      ["On-Premises", "You manage the Hardware"],
-      ["Container", "You manage the application dependencies"]
+      ["Run a script for 30 seconds when a file is uploaded", "AWS Lambda"],
+      ["Host a legacy application requiring Windows Server", "Amazon EC2"],
+      ["Deploy a web app without managing infrastructure", "Elastic Beanstalk"],
+      ["Run Kubernetes workloads", "Amazon EKS"]
     ]
+  },
+  {
+    "type": "multiple",
+    "question": "A startup wants simple, low-cost hosting for a WordPress blog with predictable monthly pricing. Which service is the easiest choice?",
+    "options": [
+      "Amazon EC2 with Auto Scaling",
+      "AWS Lambda",
+      "Amazon Lightsail",
+      "Amazon EKS"
+    ],
+    "correct": 2,
+    "explanation": "Lightsail offers simple virtual private servers with predictable pricing—ideal for small websites and developers new to AWS."
+  },
+  {
+    "type": "fillblank",
+    "question": "With AWS Lambda, you only pay for the ___ time your code consumes.",
+    "answers": ["compute", "Compute"],
+    "explanation": "Lambda pricing is based on the number of requests and the duration (compute time) your code runs, measured in milliseconds."
   }
 ]

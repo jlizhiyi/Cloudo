@@ -1,0 +1,106 @@
+[
+  {
+    "type": "multiple",
+    "question": "A web application receives orders faster than the backend can process them. You need to buffer these requests so none are lost. Which service should you use?",
+    "options": [
+      "Amazon SNS",
+      "Amazon SQS",
+      "AWS Lambda",
+      "Amazon EventBridge"
+    ],
+    "correct": 1,
+    "explanation": "SQS is a message queue that holds messages until consumers are ready to process them—perfect for buffering and decoupling."
+  },
+  {
+    "type": "multiple",
+    "question": "An e-commerce company needs to send an order confirmation to: (1) an email service, (2) an inventory system, and (3) a shipping system—all at once. Which service enables this?",
+    "options": [
+      "Amazon SQS",
+      "Amazon SNS",
+      "AWS Step Functions",
+      "Amazon API Gateway"
+    ],
+    "correct": 1,
+    "explanation": "SNS uses pub/sub to fan out messages to multiple subscribers simultaneously. One publish, many receivers."
+  },
+  {
+    "type": "matching",
+    "question": "Match the service to its messaging pattern:",
+    "pairs": [
+      ["SQS", "Queue - one consumer processes each message"],
+      ["SNS", "Pub/Sub - many subscribers receive the same message"],
+      ["EventBridge", "Event bus - route events based on rules"],
+      ["Step Functions", "Orchestrate multi-step workflows"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "Amazon ___ is a pub/sub service that can send notifications via email, SMS, or to other AWS services.",
+    "answers": ["SNS", "Simple Notification Service"],
+    "explanation": "SNS (Simple Notification Service) pushes messages to subscribers through various protocols including email, SMS, and HTTP."
+  },
+  {
+    "type": "multiple",
+    "question": "Which SQS queue type guarantees that messages are processed exactly once and in the exact order they were sent?",
+    "options": [
+      "Standard Queue",
+      "FIFO Queue",
+      "Priority Queue",
+      "Dead Letter Queue"
+    ],
+    "correct": 1,
+    "explanation": "FIFO (First-In-First-Out) queues guarantee exactly-once processing and maintain strict message ordering."
+  },
+  {
+    "type": "multiple",
+    "question": "You want to automatically trigger a Lambda function whenever a file is uploaded to S3. Which service can route this event?",
+    "options": [
+      "Amazon SQS",
+      "Amazon SNS",
+      "Amazon EventBridge",
+      "AWS Step Functions"
+    ],
+    "correct": 2,
+    "explanation": "EventBridge can capture S3 events (and events from many AWS services) and route them to targets like Lambda based on rules."
+  },
+  {
+    "type": "multiple",
+    "question": "A data pipeline has 5 steps that must run in sequence: validate → transform → enrich → load → notify. If any step fails, it should retry 3 times. Which service should orchestrate this?",
+    "options": [
+      "Amazon SQS",
+      "Amazon SNS",
+      "AWS Step Functions",
+      "Amazon EventBridge"
+    ],
+    "correct": 2,
+    "explanation": "Step Functions coordinate multi-step workflows with built-in error handling, retries, branching, and parallel execution."
+  },
+  {
+    "type": "matching",
+    "question": "Match the scenario to the best service:",
+    "pairs": [
+      ["Buffer requests between microservices", "Amazon SQS"],
+      ["Send alerts to multiple systems at once", "Amazon SNS"],
+      ["Coordinate a 5-step order fulfillment process", "AWS Step Functions"],
+      ["Trigger actions when AWS resources change state", "Amazon EventBridge"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "To decouple application components and prevent message loss during traffic spikes, use Amazon ___.",
+    "answers": ["SQS", "Simple Queue Service"],
+    "explanation": "SQS queues act as a buffer between producers and consumers, ensuring messages aren't lost when systems are overloaded."
+  },
+  {
+    "type": "multiple",
+    "question": "What is the primary benefit of decoupling applications using services like SQS?",
+    "options": [
+      "Faster network speeds",
+      "Components can fail independently without cascading failures",
+      "Lower storage costs",
+      "Automatic code deployment"
+    ],
+    "correct": 1,
+    "explanation": "Decoupling means one component's failure doesn't bring down the others. The queue holds messages until the failed component recovers."
+  }
+]

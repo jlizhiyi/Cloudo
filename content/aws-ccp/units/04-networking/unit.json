@@ -2,7 +2,9 @@
   "dir": "04-networking",
   "title": "Networking & Content Delivery",
   "lessons": [
-    { "slug": "01-vpc-basics", "title": "VPC Fundamentals" },
-    { "slug": "02-content-delivery-dns", "title": "Content Delivery & DNS" }
+    { "slug": "01-vpc-fundamentals", "title": "VPC Fundamentals" },
+    { "slug": "02-network-security", "title": "Network Security" },
+    { "slug": "03-connectivity", "title": "Connectivity Options" },
+    { "slug": "04-content-delivery-dns", "title": "Content Delivery & DNS" }
   ]
 }

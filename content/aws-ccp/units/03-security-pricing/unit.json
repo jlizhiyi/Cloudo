@@ -1,8 +1,10 @@
 {
   "dir": "03-security-pricing",
-  "title": "Security & Pricing",
+  "title": "Security, Compliance & Pricing",
   "lessons": [
-    { "slug": "01-shared-responsibility", "title": "Shared Responsibility Model" },
-    { "slug": "02-cloud-pricing-models", "title": "Cloud Pricing Models" }
+    { "slug": "01-iam-fundamentals", "title": "IAM Fundamentals" },
+    { "slug": "02-security-services", "title": "Security Services & Compliance" },
+    { "slug": "03-shared-responsibility", "title": "Shared Responsibility Model" },
+    { "slug": "04-pricing-billing-support", "title": "Pricing, Billing & Support" }
   ]
 }

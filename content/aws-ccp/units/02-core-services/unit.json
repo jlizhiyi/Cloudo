@@ -1,8 +1,9 @@
 {
   "dir": "02-core-services",
-  "title": "Core Services",
+  "title": "Core AWS Services",
   "lessons": [
     { "slug": "01-compute-services", "title": "Compute Services" },
-    { "slug": "02-storage-services", "title": "Storage Services" }
+    { "slug": "02-storage-services", "title": "Storage Services" },
+    { "slug": "03-application-integration", "title": "Application Integration" }
   ]
 }

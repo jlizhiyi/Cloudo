@@ -1,0 +1,140 @@
+[
+  {
+    "type": "multiple",
+    "question": "A company runs a production database 24/7 for the next 3 years. Which pricing model offers the biggest discount?",
+    "options": [
+      "On-Demand",
+      "Spot Instances",
+      "Reserved Instances or Savings Plans",
+      "Free Tier"
+    ],
+    "correct": 2,
+    "explanation": "Reserved Instances and Savings Plans offer up to 72% discount for long-term, steady-state workloads."
+  },
+  {
+    "type": "multiple",
+    "question": "Which pricing model is best for fault-tolerant batch processing that can handle interruptions?",
+    "options": [
+      "On-Demand",
+      "Reserved Instances",
+      "Spot Instances",
+      "Dedicated Hosts"
+    ],
+    "correct": 2,
+    "explanation": "Spot Instances offer up to 90% discount but can be terminated with 2-minute notice. Ideal for interruptible workloads."
+  },
+  {
+    "type": "matching",
+    "question": "Match the pricing model to its characteristic:",
+    "pairs": [
+      ["On-Demand", "No commitment, pay by the hour"],
+      ["Reserved", "1-3 year commitment for discounts"],
+      ["Spot", "Unused capacity, can be interrupted"],
+      ["Dedicated Hosts", "Physical server for licensing compliance"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "AWS ___ allows you to manage multiple AWS accounts and receive a single consolidated bill.",
+    "answers": ["Organizations", "organizations"],
+    "explanation": "AWS Organizations provides central governance and consolidated billing across all member accounts."
+  },
+  {
+    "type": "multiple",
+    "question": "Which tool should you use to set alerts when your AWS spending exceeds a certain threshold?",
+    "options": [
+      "AWS Cost Explorer",
+      "AWS Budgets",
+      "AWS Pricing Calculator",
+      "AWS Cost and Usage Report"
+    ],
+    "correct": 1,
+    "explanation": "AWS Budgets lets you set custom cost and usage budgets and receive alerts when you exceed thresholds."
+  },
+  {
+    "type": "multiple",
+    "question": "Which AWS Support plan provides a dedicated Technical Account Manager (TAM)?",
+    "options": [
+      "Developer",
+      "Business",
+      "Enterprise On-Ramp",
+      "Enterprise"
+    ],
+    "correct": 3,
+    "explanation": "Only the Enterprise plan includes a dedicated TAM. Enterprise On-Ramp provides access to a pool of TAMs."
+  },
+  {
+    "type": "multiple",
+    "question": "Which tool would you use to estimate the cost of a new workload BEFORE deploying it to AWS?",
+    "options": [
+      "AWS Cost Explorer",
+      "AWS Budgets",
+      "AWS Pricing Calculator",
+      "AWS Trusted Advisor"
+    ],
+    "correct": 2,
+    "explanation": "AWS Pricing Calculator helps you estimate costs for AWS services based on your expected usage."
+  },
+  {
+    "type": "matching",
+    "question": "Match the cost tool to its purpose:",
+    "pairs": [
+      ["Cost Explorer", "Visualize and analyze historical spending"],
+      ["Budgets", "Set alerts for spending thresholds"],
+      ["Pricing Calculator", "Estimate costs before deployment"],
+      ["Compute Optimizer", "Right-sizing recommendations for EC2/EBS"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "A startup wants 24/7 phone support and access to all Trusted Advisor checks. What is the minimum support plan they need?",
+    "options": [
+      "Basic",
+      "Developer",
+      "Business",
+      "Enterprise"
+    ],
+    "correct": 2,
+    "explanation": "Business support is the minimum tier offering 24/7 phone/chat support and full Trusted Advisor checks."
+  },
+  {
+    "type": "fillblank",
+    "question": "Data transferred INTO AWS from the internet is ___, while data transferred OUT is charged.",
+    "answers": ["free", "Free"],
+    "explanation": "AWS does not charge for inbound data transfer. Outbound data transfer (egress) incurs charges."
+  },
+  {
+    "type": "multiple",
+    "question": "Which feature of AWS Organizations allows you to restrict which AWS services member accounts can use?",
+    "options": [
+      "Consolidated Billing",
+      "Service Control Policies (SCPs)",
+      "Organizational Units",
+      "Cost Allocation Tags"
+    ],
+    "correct": 1,
+    "explanation": "SCPs are permission guardrails that define the maximum permissions for accounts in an organization."
+  },
+  {
+    "type": "multiple",
+    "question": "The AWS Free Tier includes 750 hours per month of which EC2 instance type for 12 months?",
+    "options": [
+      "t2.large",
+      "t2.micro",
+      "m5.large",
+      "Any instance type"
+    ],
+    "correct": 1,
+    "explanation": "The Free Tier includes 750 hours/month of t2.micro (or t3.micro in some regions) for the first 12 months."
+  },
+  {
+    "type": "matching",
+    "question": "Match the Support plan to its response time for production system down:",
+    "pairs": [
+      ["Developer", "No production support SLA"],
+      ["Business", "< 1 hour"],
+      ["Enterprise On-Ramp", "< 30 minutes"],
+      ["Enterprise", "< 15 minutes"]
+    ]
+  }
+]

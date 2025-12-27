@@ -1,0 +1,130 @@
+[
+  {
+    "type": "multiple",
+    "question": "Which statement correctly describes Security Groups?",
+    "options": [
+      "They are stateless and operate at the subnet level",
+      "They are stateful and operate at the instance level",
+      "They support both allow and deny rules",
+      "They are evaluated in numerical order"
+    ],
+    "correct": 1,
+    "explanation": "Security Groups are stateful (return traffic automatically allowed) and operate at the instance/ENI level."
+  },
+  {
+    "type": "multiple",
+    "question": "A Network ACL allows inbound HTTP traffic on port 80. Users still cannot access the web server. What is most likely missing?",
+    "options": [
+      "An Internet Gateway",
+      "An outbound rule allowing ephemeral ports (1024-65535)",
+      "A Security Group",
+      "A NAT Gateway"
+    ],
+    "correct": 1,
+    "explanation": "NACLs are stateless. You must explicitly allow outbound traffic on ephemeral ports for HTTP responses."
+  },
+  {
+    "type": "matching",
+    "question": "Match the characteristic to the correct firewall type:",
+    "pairs": [
+      ["Stateful", "Security Group"],
+      ["Stateless", "Network ACL"],
+      ["Instance level", "Security Group"],
+      ["Subnet level", "Network ACL"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "Security Groups are ___, meaning return traffic is automatically allowed without an explicit outbound rule.",
+    "answers": ["stateful", "Stateful"],
+    "explanation": "Stateful firewalls track connections. If an inbound request is allowed, the response is automatically permitted."
+  },
+  {
+    "type": "multiple",
+    "question": "You need to explicitly BLOCK traffic from a specific IP address at the subnet level. What should you use?",
+    "options": [
+      "Security Group with a deny rule",
+      "Network ACL with a deny rule",
+      "Route table blackhole",
+      "Internet Gateway filter"
+    ],
+    "correct": 1,
+    "explanation": "Only NACLs support deny rules. Security Groups can only allow traffic; they cannot explicitly deny."
+  },
+  {
+    "type": "multiple",
+    "question": "By default, what does a NEW Security Group allow?",
+    "options": [
+      "All inbound and outbound traffic",
+      "No inbound traffic, all outbound traffic",
+      "All inbound traffic, no outbound traffic",
+      "No traffic at all"
+    ],
+    "correct": 1,
+    "explanation": "New Security Groups deny all inbound traffic by default and allow all outbound traffic. You must add inbound rules."
+  },
+  {
+    "type": "multiple",
+    "question": "A NACL has the following rules: Rule 100 ALLOW SSH, Rule 200 DENY all traffic. An SSH connection attempt arrives. What happens?",
+    "options": [
+      "Connection is denied because deny overrides allow",
+      "Connection is allowed because rule 100 matches first",
+      "Connection is allowed because SSH is always permitted",
+      "Both rules are evaluated and the most restrictive wins"
+    ],
+    "correct": 1,
+    "explanation": "NACLs evaluate rules in order by rule number. Rule 100 (ALLOW SSH) matches first, so the connection is allowed."
+  },
+  {
+    "type": "matching",
+    "question": "Match the firewall feature:",
+    "pairs": [
+      ["Supports deny rules", "Network ACL"],
+      ["Only supports allow rules", "Security Group"],
+      ["Rules processed in order", "Network ACL"],
+      ["All rules evaluated together", "Security Group"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "Which of the following can you reference as a source in a Security Group rule?",
+    "options": [
+      "Only IP addresses (CIDR blocks)",
+      "Only other Security Groups",
+      "IP addresses, Security Groups, or prefix lists",
+      "Only domain names"
+    ],
+    "correct": 2,
+    "explanation": "Security Group rules can reference CIDR blocks, other Security Groups (by ID), or managed prefix lists."
+  },
+  {
+    "type": "fillblank",
+    "question": "To achieve defense in depth, use ___ at the subnet level and ___ at the instance level.",
+    "answers": ["NACLs, Security Groups", "Network ACLs, Security Groups", "NACL, Security Group"],
+    "explanation": "NACLs provide the first line of defense at the subnet boundary, while Security Groups protect individual instances."
+  },
+  {
+    "type": "multiple",
+    "question": "A Security Group allows inbound HTTPS (443) from 0.0.0.0/0. Do you need to add an outbound rule for the response?",
+    "options": [
+      "Yes, you must allow outbound port 443",
+      "Yes, you must allow outbound ephemeral ports",
+      "No, Security Groups are stateful—return traffic is automatic",
+      "No, but you need a NACL outbound rule"
+    ],
+    "correct": 2,
+    "explanation": "Security Groups are stateful. If inbound traffic is allowed, the outbound response is automatically permitted."
+  },
+  {
+    "type": "multiple",
+    "question": "What is the default behavior of the DEFAULT Network ACL created with a VPC?",
+    "options": [
+      "Deny all inbound and outbound traffic",
+      "Allow all inbound and outbound traffic",
+      "Allow inbound, deny outbound",
+      "Deny inbound, allow outbound"
+    ],
+    "correct": 1,
+    "explanation": "The default NACL allows all traffic in both directions. Custom NACLs you create deny all by default."
+  }
+]

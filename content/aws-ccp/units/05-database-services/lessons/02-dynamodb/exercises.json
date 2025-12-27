@@ -1,0 +1,130 @@
+[
+  {
+    "type": "multiple",
+    "question": "A gaming company needs a database for their leaderboard that handles millions of requests per second with single-digit millisecond latency. Which service fits best?",
+    "options": [
+      "Amazon RDS",
+      "Amazon Redshift",
+      "Amazon DynamoDB",
+      "Amazon ElastiCache"
+    ],
+    "correct": 2,
+    "explanation": "DynamoDB is a NoSQL database designed for single-digit millisecond latency at any scale—ideal for gaming leaderboards."
+  },
+  {
+    "type": "multiple",
+    "question": "Which DynamoDB capacity mode should you choose for a new application with unpredictable traffic patterns?",
+    "options": [
+      "Provisioned capacity",
+      "On-Demand capacity",
+      "Reserved capacity",
+      "Spot capacity"
+    ],
+    "correct": 1,
+    "explanation": "On-Demand capacity automatically scales to accommodate traffic and charges per request—ideal for unpredictable workloads."
+  },
+  {
+    "type": "matching",
+    "question": "Match the DynamoDB feature to its purpose:",
+    "pairs": [
+      ["Global Tables", "Multi-region, active-active replication"],
+      ["DynamoDB Streams", "Capture item-level changes in real-time"],
+      ["DAX", "In-memory caching for microsecond latency"],
+      ["TTL", "Automatically expire and delete old items"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "DynamoDB ___ Tables provide multi-region, multi-active replication for global applications.",
+    "answers": ["Global", "global"],
+    "explanation": "Global Tables replicate data across multiple AWS Regions, allowing users to read/write from the nearest region."
+  },
+  {
+    "type": "multiple",
+    "question": "A DynamoDB table uses a composite primary key. What are the two components?",
+    "options": [
+      "Primary Key and Foreign Key",
+      "Partition Key and Sort Key",
+      "Row Key and Column Key",
+      "Index Key and Data Key"
+    ],
+    "correct": 1,
+    "explanation": "A composite primary key consists of a Partition Key (for distribution) and a Sort Key (for ordering within the partition)."
+  },
+  {
+    "type": "multiple",
+    "question": "An application needs to reduce DynamoDB read latency from milliseconds to microseconds. What should you use?",
+    "options": [
+      "Read Replicas",
+      "Global Tables",
+      "DynamoDB Accelerator (DAX)",
+      "Provisioned Capacity"
+    ],
+    "correct": 2,
+    "explanation": "DAX is a fully managed in-memory cache for DynamoDB that delivers microsecond read latency."
+  },
+  {
+    "type": "multiple",
+    "question": "Which statement about DynamoDB is TRUE?",
+    "options": [
+      "It requires you to define a fixed schema before creating a table",
+      "It automatically replicates data across 3 Availability Zones",
+      "It only supports key-value data, not documents",
+      "It requires manual server provisioning"
+    ],
+    "correct": 1,
+    "explanation": "DynamoDB is serverless with flexible schemas. Data is automatically replicated across 3 AZs for high availability."
+  },
+  {
+    "type": "matching",
+    "question": "Match the use case to the best DynamoDB feature:",
+    "pairs": [
+      ["Automatically delete session data after 24 hours", "TTL (Time to Live)"],
+      ["Trigger a Lambda when an item changes", "DynamoDB Streams"],
+      ["Serve global users from nearest region", "Global Tables"],
+      ["Cache frequently accessed items", "DAX"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "DynamoDB offers two capacity modes: Provisioned and ___.",
+    "answers": ["On-Demand", "on-demand", "On Demand"],
+    "explanation": "On-Demand mode charges per request with automatic scaling. Provisioned mode requires setting capacity units."
+  },
+  {
+    "type": "multiple",
+    "question": "You have a DynamoDB table with predictable, steady traffic. Which capacity mode is most cost-effective?",
+    "options": [
+      "On-Demand",
+      "Provisioned with Auto Scaling",
+      "Reserved Instances",
+      "Spot Capacity"
+    ],
+    "correct": 1,
+    "explanation": "Provisioned capacity with Auto Scaling is more cost-effective for predictable workloads. On-Demand costs more per request."
+  },
+  {
+    "type": "multiple",
+    "question": "Which DynamoDB feature allows you to react to data changes in real-time?",
+    "options": [
+      "Global Tables",
+      "DynamoDB Streams",
+      "DAX",
+      "TTL"
+    ],
+    "correct": 1,
+    "explanation": "DynamoDB Streams captures a time-ordered sequence of item-level changes, which can trigger Lambda functions."
+  },
+  {
+    "type": "multiple",
+    "question": "When should you choose DynamoDB over Amazon RDS?",
+    "options": [
+      "When you need complex SQL joins across multiple tables",
+      "When you need high-scale, low-latency access with simple key-based queries",
+      "When you need full ACID transaction support",
+      "When you need to run Oracle databases"
+    ],
+    "correct": 1,
+    "explanation": "DynamoDB excels at high-scale, low-latency workloads with simple access patterns. Use RDS for complex queries and joins."
+  }
+]

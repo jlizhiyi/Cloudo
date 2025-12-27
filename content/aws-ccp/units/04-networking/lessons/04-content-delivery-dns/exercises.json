@@ -1,0 +1,130 @@
+[
+  {
+    "type": "multiple",
+    "question": "Your website is hosted in us-west-2, but users in Europe experience slow load times. Which service can reduce latency by caching content closer to users?",
+    "options": [
+      "AWS Direct Connect",
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "AWS Global Accelerator"
+    ],
+    "correct": 1,
+    "explanation": "CloudFront caches static content at Edge Locations worldwide, so European users get content from a nearby edge instead of us-west-2."
+  },
+  {
+    "type": "multiple",
+    "question": "Which Route 53 routing policy should you use to send 80% of traffic to one server and 20% to another for testing a new feature?",
+    "options": [
+      "Simple Routing",
+      "Failover Routing",
+      "Weighted Routing",
+      "Latency Routing"
+    ],
+    "correct": 2,
+    "explanation": "Weighted Routing lets you assign weights (percentages) to different endpoints—perfect for A/B testing or gradual rollouts."
+  },
+  {
+    "type": "matching",
+    "question": "Match the Route 53 routing policy to its use case:",
+    "pairs": [
+      ["Simple", "One web server, basic DNS"],
+      ["Latency", "Route users to the fastest region"],
+      ["Failover", "Automatic disaster recovery to backup site"],
+      ["Geolocation", "Show different content per country"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "Amazon Route 53 is named after port ___, the standard port for DNS.",
+    "answers": ["53"],
+    "explanation": "DNS operates on port 53. Route 53 is AWS's scalable DNS service."
+  },
+  {
+    "type": "multiple",
+    "question": "What is the primary difference between CloudFront and AWS Global Accelerator?",
+    "options": [
+      "CloudFront is for DNS; Global Accelerator is for caching",
+      "CloudFront caches content; Global Accelerator accelerates dynamic, non-cacheable traffic",
+      "CloudFront is paid; Global Accelerator is free",
+      "CloudFront works only with S3; Global Accelerator works only with EC2"
+    ],
+    "correct": 1,
+    "explanation": "CloudFront caches static content at edges. Global Accelerator routes dynamic traffic over AWS's backbone network for better performance."
+  },
+  {
+    "type": "multiple",
+    "question": "You want Route 53 to automatically redirect traffic to a backup site if the primary site fails. Which routing policy should you use?",
+    "options": [
+      "Weighted",
+      "Latency",
+      "Failover",
+      "Simple"
+    ],
+    "correct": 2,
+    "explanation": "Failover routing uses health checks to detect primary failure and automatically routes to a secondary (standby) endpoint."
+  },
+  {
+    "type": "multiple",
+    "question": "Which service would you use to create a REST API that triggers AWS Lambda functions?",
+    "options": [
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "Amazon API Gateway",
+      "AWS Global Accelerator"
+    ],
+    "correct": 2,
+    "explanation": "API Gateway is designed for creating and managing APIs. It integrates natively with Lambda for serverless backends."
+  },
+  {
+    "type": "matching",
+    "question": "Match the service to its function:",
+    "pairs": [
+      ["CloudFront", "CDN - caches content at edge locations"],
+      ["Route 53", "DNS service with health checks"],
+      ["Global Accelerator", "Static IPs + AWS backbone for dynamic apps"],
+      ["API Gateway", "Create and manage REST/WebSocket APIs"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "CloudFront caches content at over 400 ___ Locations around the world.",
+    "answers": ["Edge", "edge"],
+    "explanation": "Edge Locations are AWS data centers specifically for CloudFront caching, separate from Regions and Availability Zones."
+  },
+  {
+    "type": "multiple",
+    "question": "A global gaming company needs to minimize latency for real-time multiplayer traffic that cannot be cached. Which service should they use?",
+    "options": [
+      "Amazon CloudFront",
+      "Amazon Route 53 with Latency routing",
+      "AWS Global Accelerator",
+      "Amazon API Gateway"
+    ],
+    "correct": 2,
+    "explanation": "Global Accelerator routes traffic over AWS's backbone network and provides static Anycast IPs—ideal for real-time, non-cacheable traffic."
+  },
+  {
+    "type": "multiple",
+    "question": "What does CloudFront use as the source of original content to cache?",
+    "options": [
+      "Edge Location",
+      "Origin",
+      "Distribution",
+      "Availability Zone"
+    ],
+    "correct": 1,
+    "explanation": "The Origin is where CloudFront retrieves content when it's not in the cache. Origins can be S3 buckets, EC2 instances, ALBs, or any HTTP server."
+  },
+  {
+    "type": "multiple",
+    "question": "Which Route 53 feature allows you to monitor whether an endpoint is healthy before routing traffic to it?",
+    "options": [
+      "DNS Caching",
+      "Health Checks",
+      "Domain Registration",
+      "CNAME Records"
+    ],
+    "correct": 1,
+    "explanation": "Route 53 Health Checks monitor endpoint availability and can trigger routing changes (like failover) when an endpoint becomes unhealthy."
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "type": "multiple",
+    "question": "What makes a subnet a 'public subnet'?",
+    "options": [
+      "It contains EC2 instances with public IP addresses",
+      "Its route table has a route to an Internet Gateway",
+      "It is in a public Availability Zone",
+      "It has a NAT Gateway attached"
+    ],
+    "correct": 1,
+    "explanation": "A public subnet has a route table entry directing internet-bound traffic (0.0.0.0/0) to an Internet Gateway."
+  },
+  {
+    "type": "multiple",
+    "question": "A database server in a private subnet needs to download security patches from the internet. Which component enables this?",
+    "options": [
+      "Internet Gateway",
+      "NAT Gateway",
+      "VPC Peering",
+      "Elastic IP"
+    ],
+    "correct": 1,
+    "explanation": "A NAT Gateway allows private subnet resources to initiate outbound internet connections while blocking inbound connections."
+  },
+  {
+    "type": "matching",
+    "question": "Match the component to its function:",
+    "pairs": [
+      ["VPC", "Isolated virtual network in AWS"],
+      ["Subnet", "A range of IP addresses in one Availability Zone"],
+      ["Internet Gateway", "Connects VPC to the public internet"],
+      ["NAT Gateway", "Enables private instances to reach the internet outbound"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "A VPC spans a single AWS ___, but subnets exist within a single Availability Zone.",
+    "answers": ["Region", "region"],
+    "explanation": "A VPC is regional, spanning all AZs in that region. Each subnet is confined to one specific AZ."
+  },
+  {
+    "type": "multiple",
+    "question": "Where should you deploy a NAT Gateway?",
+    "options": [
+      "In a private subnet",
+      "In a public subnet",
+      "Outside the VPC",
+      "In the Internet Gateway"
+    ],
+    "correct": 1,
+    "explanation": "NAT Gateways must be in a public subnet (with an IGW route) so they can reach the internet and relay traffic for private instances."
+  },
+  {
+    "type": "multiple",
+    "question": "Which of the following is true about the default VPC?",
+    "options": [
+      "You must create it manually in each region",
+      "It has no internet connectivity by default",
+      "It comes with public subnets and an Internet Gateway pre-configured",
+      "It can only contain private subnets"
+    ],
+    "correct": 2,
+    "explanation": "The default VPC is created automatically in each region with public subnets (one per AZ) and an Internet Gateway attached."
+  },
+  {
+    "type": "multiple",
+    "question": "What happens if you allocate an Elastic IP but don't associate it with a running instance?",
+    "options": [
+      "Nothing—Elastic IPs are always free",
+      "You are charged for the unused Elastic IP",
+      "The Elastic IP is automatically released",
+      "AWS assigns it to a random instance"
+    ],
+    "correct": 1,
+    "explanation": "AWS charges for Elastic IPs that are allocated but not associated with a running instance to encourage efficient use of IPv4 addresses."
+  },
+  {
+    "type": "matching",
+    "question": "Match the resource to its appropriate subnet type:",
+    "pairs": [
+      ["Web server accessible from the internet", "Public subnet"],
+      ["Database with no direct internet access", "Private subnet"],
+      ["NAT Gateway", "Public subnet"],
+      ["Backend application server", "Private subnet"]
+    ]
+  },
+  {
+    "type": "fillblank",
+    "question": "To allow internet traffic to reach resources in a public subnet, you must attach an ___ to the VPC.",
+    "answers": ["Internet Gateway", "internet gateway", "IGW", "igw"],
+    "explanation": "An Internet Gateway provides the connection between your VPC and the public internet."
+  },
+  {
+    "type": "multiple",
+    "question": "How many Internet Gateways can you attach to a single VPC?",
+    "options": [
+      "Unlimited",
+      "One per Availability Zone",
+      "One per VPC",
+      "One per subnet"
+    ],
+    "correct": 2,
+    "explanation": "You can attach only one Internet Gateway per VPC. The IGW is horizontally scaled and highly available across all AZs."
+  }
+]

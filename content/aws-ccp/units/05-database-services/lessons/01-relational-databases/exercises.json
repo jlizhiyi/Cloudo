@@ -6,38 +6,38 @@
       "Read Replicas",
       "Multi-AZ Deployment",
       "Aurora Serverless",
-      "Enhanced Monitoring"
+      "RDS Proxy"
     ],
     "correct": 1,
-    "explanation": "Multi-AZ creates a synchronous standby replica in another Availability Zone. If the primary fails, RDS automatically fails over to the standby."
+    "explanation": "Multi-AZ creates a synchronous standby replica in another AZ. If the primary fails, RDS automatically fails over to the standby."
   },
   {
     "type": "multiple",
-    "question": "You have a reporting application that runs heavy read queries. You don't want these to slow down your production database. What should you use?",
+    "question": "A reporting application runs heavy read queries that slow down the production database. What should you use to offload this traffic?",
     "options": [
       "Multi-AZ Deployment",
       "Read Replicas",
       "Larger instance type",
-      "Aurora Serverless"
+      "RDS Proxy"
     ],
     "correct": 1,
-    "explanation": "Read Replicas are asynchronous copies of your database. Direct read-heavy traffic to replicas to offload the primary database."
+    "explanation": "Read Replicas are asynchronous copies. Direct read-heavy workloads to replicas to reduce load on the primary database."
   },
   {
     "type": "matching",
-    "question": "Match the feature to its purpose:",
+    "question": "Match the RDS feature to its purpose:",
     "pairs": [
       ["Multi-AZ", "Automatic failover for high availability"],
       ["Read Replicas", "Scale read capacity horizontally"],
       ["Automated Backups", "Point-in-time recovery"],
-      ["Aurora Serverless", "Auto-scaling capacity for variable workloads"]
+      ["RDS Proxy", "Connection pooling for serverless apps"]
     ]
   },
   {
     "type": "fillblank",
-    "question": "Amazon ___ is a MySQL/PostgreSQL-compatible database that offers up to 5x the performance of standard MySQL.",
-    "answers": ["Aurora", "aurora"],
-    "explanation": "Aurora is AWS's cloud-native relational database, designed for high performance and availability."
+    "question": "Amazon Aurora automatically stores ___ copies of your data across 3 Availability Zones.",
+    "answers": ["6", "six"],
+    "explanation": "Aurora replicates data 6 times across 3 AZs for high durability, and can lose 2 copies without affecting write availability."
   },
   {
     "type": "multiple",
@@ -45,35 +45,35 @@
     "options": [
       "Database software patching",
       "Automated backups",
-      "Schema design and query optimization",
+      "Query optimization and schema design",
       "Hardware provisioning"
     ],
     "correct": 2,
-    "explanation": "RDS manages infrastructure, patching, and backups. You are still responsible for your data, schema design, and optimizing queries."
+    "explanation": "RDS manages infrastructure, patching, and backups. You are responsible for your data, schema design, and query optimization."
   },
   {
     "type": "multiple",
-    "question": "A development team needs a database that scales to zero when not in use to save costs. Which should they use?",
+    "question": "A development team needs a database that scales to zero when not in use to minimize costs. Which should they use?",
     "options": [
-      "RDS MySQL Multi-AZ",
+      "RDS MySQL with Multi-AZ",
       "Aurora Serverless",
-      "RDS Read Replicas",
-      "DynamoDB"
+      "RDS with Read Replicas",
+      "Aurora Provisioned"
     ],
     "correct": 1,
-    "explanation": "Aurora Serverless automatically scales capacity up and down, and can pause during inactivity—ideal for dev/test or variable workloads."
+    "explanation": "Aurora Serverless automatically scales capacity and can pause during inactivity—ideal for dev/test or unpredictable workloads."
   },
   {
     "type": "multiple",
-    "question": "How many copies of your data does Amazon Aurora store by default?",
+    "question": "Can the Multi-AZ standby replica be used to serve read traffic?",
     "options": [
-      "2 copies in 1 AZ",
-      "3 copies in 1 AZ",
-      "6 copies across 3 AZs",
-      "1 copy with backups"
+      "Yes, it automatically load balances reads",
+      "Yes, but only during failover",
+      "No, the standby is only for failover",
+      "No, Multi-AZ doesn't create a standby"
     ],
     "correct": 2,
-    "explanation": "Aurora automatically replicates your data 6 times across 3 Availability Zones for high durability."
+    "explanation": "The Multi-AZ standby is synchronous but NOT accessible for reads. Use Read Replicas to scale read traffic."
   },
   {
     "type": "matching",
@@ -82,13 +82,49 @@
       ["Standard MySQL with managed backups", "Amazon RDS for MySQL"],
       ["5x MySQL performance, auto-scaling storage", "Amazon Aurora"],
       ["Full control over OS and database config", "Self-managed on EC2"],
-      ["Scale down to zero during off-hours", "Aurora Serverless"]
+      ["Automatic scaling, pay only when running", "Aurora Serverless"]
     ]
   },
   {
+    "type": "multiple",
+    "question": "What is the maximum backup retention period for RDS automated backups?",
+    "options": [
+      "7 days",
+      "14 days",
+      "35 days",
+      "Unlimited"
+    ],
+    "correct": 2,
+    "explanation": "RDS automated backups can be retained for up to 35 days, enabling point-in-time recovery within that window."
+  },
+  {
     "type": "fillblank",
-    "question": "RDS ___ Replicas allow you to scale read traffic by creating asynchronous copies of your database.",
+    "question": "RDS ___ Replicas use asynchronous replication and can be promoted to standalone databases.",
     "answers": ["Read", "read"],
-    "explanation": "Read Replicas offload read traffic from the primary database. They use asynchronous replication."
+    "explanation": "Read Replicas are asynchronous copies for scaling reads. They can be promoted, which breaks the replication link."
+  },
+  {
+    "type": "multiple",
+    "question": "AWS Lambda functions connecting to RDS create many short-lived connections, overwhelming the database. Which service helps?",
+    "options": [
+      "Multi-AZ",
+      "Read Replicas",
+      "RDS Proxy",
+      "Aurora Serverless"
+    ],
+    "correct": 2,
+    "explanation": "RDS Proxy pools and shares database connections, reducing the connection overhead from Lambda's concurrent invocations."
+  },
+  {
+    "type": "multiple",
+    "question": "Which RDS database engines does Amazon Aurora support?",
+    "options": [
+      "MySQL and PostgreSQL only",
+      "MySQL, PostgreSQL, and Oracle",
+      "All RDS engines",
+      "Only proprietary AWS formats"
+    ],
+    "correct": 0,
+    "explanation": "Aurora is compatible with MySQL and PostgreSQL. It's AWS's cloud-native implementation of these engines."
   }
 ]

@@ -1,88 +1,127 @@
 [
   {
     "type": "multiple",
-    "question": "You are hosting a database on a virtual machine and need a storage drive that offers low-latency and persists independent of the VM's life. What should you use?",
+    "question": "A company needs to store millions of images that users access frequently. The data must be highly durable and accessible via URLs. Which service is best?",
     "options": [
-      "Object Storage",
-      "Block Storage",
-      "Archive Storage",
-      "File Storage"
+      "Amazon EBS",
+      "Amazon S3 Standard",
+      "Amazon EFS",
+      "AWS Snowball"
     ],
     "correct": 1,
-    "explanation": "Block storage acts like a physical hard drive. It is required for databases and boot volumes because it supports frequent read/write operations with low latency."
+    "explanation": "S3 Standard is ideal for frequently accessed objects like images. It offers 11 nines durability and HTTP access."
   },
   {
     "type": "multiple",
-    "question": "A marketing team needs a shared folder that 20 different Linux servers can read and write to simultaneously. Which solution is best?",
+    "question": "Which S3 storage class should you use for data that is accessed once a month but must be retrieved instantly when needed?",
     "options": [
-      "Block Storage",
-      "Object Storage",
-      "File Storage",
-      "Instance Store"
+      "S3 Standard",
+      "S3 Standard-IA (Infrequent Access)",
+      "S3 Glacier Deep Archive",
+      "S3 One Zone-IA"
     ],
-    "correct": 2,
-    "explanation": "File storage is designed to be mounted by multiple servers simultaneously, acting like a shared network drive."
+    "correct": 1,
+    "explanation": "S3 Standard-IA is for infrequently accessed data that still needs millisecond retrieval. You pay less for storage but have a retrieval fee."
   },
   {
     "type": "matching",
-    "question": "Match storage type to its best use case:",
+    "question": "Match the storage class to its retrieval time:",
     "pairs": [
-      ["Object storage", "Storing millions of user profile photos"],
-      ["Block storage", "The boot drive for a Virtual Machine"],
-      ["File storage", "A shared content management repository"],
-      ["Archive storage", "Financial records needed for an audit in 5 years"]
+      ["S3 Standard", "Instant (milliseconds)"],
+      ["S3 Glacier Flexible", "Minutes to hours"],
+      ["S3 Glacier Deep Archive", "12-48 hours"],
+      ["S3 Intelligent-Tiering", "Automatic based on access patterns"]
     ]
   },
   {
     "type": "multiple",
-    "question": "Why is Object Storage NOT suitable for running a fast, transactional database?",
+    "question": "You need to attach a storage volume to an EC2 instance to run a PostgreSQL database. Which storage type should you use?",
     "options": [
-      "It is too expensive",
-      "It does not support encryption",
-      "It treats data as whole objects; you cannot edit a single block of a file",
-      "It has limited capacity"
-    ],
-    "correct": 2,
-    "explanation": "Object storage is 'Write Once, Read Many'. To edit a file, you must re-upload the entire object. Databases need Block storage to edit tiny pieces of data instantly."
-  },
-  {
-    "type": "multiple",
-    "question": "You want to store a static website (HTML, CSS, Images) as cheaply as possible without running a server. Which storage service is best?",
-    "options": [
-      "Block Storage attached to a VM",
-      "Object Storage",
-      "Archive Storage",
-      "File Storage"
+      "Amazon S3",
+      "Amazon EBS",
+      "Amazon S3 Glacier",
+      "AWS Snowball"
     ],
     "correct": 1,
-    "explanation": "Object Storage (like S3) can host static websites directly without needing a web server, making it extremely cost-effective."
+    "explanation": "EBS (Elastic Block Store) provides block-level storage volumes for EC2 instances—required for databases and operating systems."
   },
   {
     "type": "fillblank",
-    "question": "For data that is rarely accessed but must be kept for regulatory compliance (e.g., 7 years), use ___ storage.",
-    "answers": ["archive", "Archive", "cold", "Cold"],
-    "explanation": "Archive (or cold) storage offers the lowest cost per gigabyte but requires time to retrieve data."
+    "question": "Amazon S3 stores objects in containers called ___.",
+    "answers": ["buckets", "Buckets"],
+    "explanation": "S3 organizes objects into buckets. Bucket names must be globally unique across all AWS accounts."
   },
   {
     "type": "multiple",
-    "question": "Which storage type uses 'Buckets' to organize data?",
+    "question": "Multiple Linux EC2 instances need to read and write to the same shared file system simultaneously. Which service should you use?",
     "options": [
-      "Object Storage",
-      "Block Storage",
-      "File Storage",
-      "Instance Storage"
+      "Amazon EBS",
+      "Amazon S3",
+      "Amazon EFS",
+      "AWS Storage Gateway"
     ],
-    "correct": 0,
-    "explanation": "Object storage (like AWS S3) organizes objects into containers called Buckets."
+    "correct": 2,
+    "explanation": "EFS (Elastic File System) is a managed NFS that can be mounted by multiple EC2 instances concurrently."
+  },
+  {
+    "type": "multiple",
+    "question": "A company has 50 TB of data in their on-premises data center. Their internet connection would take weeks to upload it. What should they use?",
+    "options": [
+      "AWS Direct Connect",
+      "Amazon S3 Transfer Acceleration",
+      "AWS Snowball Edge",
+      "Amazon EFS"
+    ],
+    "correct": 2,
+    "explanation": "Snowball Edge is a physical device for transferring large amounts of data to AWS when network transfer is too slow."
   },
   {
     "type": "matching",
-    "question": "Match the characteristic to the storage type:",
+    "question": "Match the storage service to its best use case:",
     "pairs": [
-      ["Flat namespace (Keys/Values)", "Object Storage"],
-      ["Hierarchical file system (Folders)", "File Storage"],
-      ["Low latency, bootable", "Block Storage"],
-      ["Lowest cost, slow retrieval", "Archive Storage"]
+      ["S3", "Static website hosting and backups"],
+      ["EBS", "Boot volume for an EC2 instance"],
+      ["EFS", "Shared storage across multiple servers"],
+      ["S3 Glacier Deep Archive", "Compliance data kept for 10 years"]
+    ]
+  },
+  {
+    "type": "multiple",
+    "question": "Which S3 storage class automatically moves objects between tiers based on access patterns?",
+    "options": [
+      "S3 Standard",
+      "S3 Standard-IA",
+      "S3 Intelligent-Tiering",
+      "S3 Glacier Flexible"
+    ],
+    "correct": 2,
+    "explanation": "S3 Intelligent-Tiering monitors access patterns and automatically moves objects to the most cost-effective tier."
+  },
+  {
+    "type": "fillblank",
+    "question": "EBS ___ are point-in-time backups of your volumes stored in Amazon S3.",
+    "answers": ["snapshots", "Snapshots"],
+    "explanation": "EBS snapshots are incremental backups. Only the blocks that have changed since your last snapshot are saved."
+  },
+  {
+    "type": "multiple",
+    "question": "A company needs to store compliance records for 7 years at the lowest possible cost. Retrieval can take up to 48 hours. Which storage class?",
+    "options": [
+      "S3 Standard",
+      "S3 Standard-IA",
+      "S3 Glacier Flexible",
+      "S3 Glacier Deep Archive"
+    ],
+    "correct": 3,
+    "explanation": "S3 Glacier Deep Archive is the lowest-cost storage class, designed for data retained for 7+ years with 12-48 hour retrieval."
+  },
+  {
+    "type": "matching",
+    "question": "Match the Snow Family device to its capacity:",
+    "pairs": [
+      ["Snowcone", "8-14 TB"],
+      ["Snowball Edge", "80 TB"],
+      ["Snowmobile", "100 PB (exabyte-scale)"]
     ]
   }
 ]
