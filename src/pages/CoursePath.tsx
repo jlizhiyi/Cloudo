@@ -1,12 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Lock, CheckCircle, Circle } from 'lucide-react';
+import { ArrowLeft, Lock, CheckCircle, Circle, Zap } from 'lucide-react';
 import { courses } from '../data/courses';
 import { useProgress } from '../hooks/useProgress';
 
 export default function CoursePath() {
   const { courseId } = useParams<{ courseId: string }>();
   const course = courseId ? courses[courseId] : undefined;
-  const { progress, isLessonUnlocked, isQuizUnlocked } = useProgress(courseId ?? '');
+  const { progress, isLessonUnlocked, isQuizUnlocked, isReviewUnlocked } = useProgress(courseId ?? '');
   
   if (!course) {
     return <div className="text-white">Course not found</div>;
@@ -103,6 +103,21 @@ export default function CoursePath() {
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/50 opacity-50">
                     <Lock className="w-4 h-4 text-slate-500" />
                     <span className="text-slate-400">Unit Quiz</span>
+                  </div>
+                )}
+                {isReviewUnlocked(unitIdx) ? (
+                  <Link
+                    to={`/course/${course.id}/unit/${unitIdx}/review`}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 border-b-4 border-emerald-800 text-white font-semibold hover:bg-emerald-500 hover:border-emerald-700 transition-all active:border-b-0 active:translate-y-1"
+                  >
+                    <Zap className="w-4 h-4" />
+                    <span>General Review</span>
+                  </Link>
+                ) : (
+                  // Optional: Hide review entirely if locked, or show grayed out
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/50 opacity-30 cursor-not-allowed">
+                    <Zap className="w-4 h-4 text-slate-500" />
+                    <span className="text-slate-400">Review</span>
                   </div>
                 )}
               </div>
