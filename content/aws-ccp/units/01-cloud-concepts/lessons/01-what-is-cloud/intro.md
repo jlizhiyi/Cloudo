@@ -12,4 +12,5 @@ Think of it like electricity: you don't own a power plant, you just plug in and 
 4. **Increase speed and agility:** New IT resources are just a click away, which means you reduce the time to make those resources available to your developers from weeks to just minutes.
 5. **Go global in minutes:** Easily deploy your application in multiple regions around the world with just a few clicks.
 
-**NOTE:** No cloud provider guarantees **100% uptime**. Even the best services target 99.99% availability (often called "four nines"), which still allows for potential minutes of downtime per year.
+> [!NOTE]
+> No cloud provider guarantees **100% uptime**. Even the best services target 99.99% availability (often called "four nines"), which still allows for potential minutes of downtime per year.

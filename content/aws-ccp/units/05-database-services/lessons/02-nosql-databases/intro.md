@@ -32,7 +32,7 @@ A fully managed **data warehouse** for analytics.
 | DocumentDB | Document (MongoDB-compatible) | Content management, catalogs |
 | Neptune | Graph | Social networks, fraud detection |
 | Keyspaces | Wide-column (Cassandra-compatible) | High-scale time-series data |
-| QLDB | Ledger | Immutable, cryptographically verifiable records |
+| QLDB | Ledgere | Immutable, cryptographically verifiable records |
 | Timestream | Time-series | IoT sensor data, DevOps metrics |
 
 > [!TIP]
