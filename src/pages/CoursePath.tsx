@@ -91,33 +91,37 @@ export default function CoursePath() {
                   </div>
                 );
               })}
-              <div className="mt-4">
+              <div className="mt-6 flex flex-col gap-3 w-full max-w-[240px]">
                 {isQuizUnlocked(unitIdx) ? (
                   <Link
                     to={`/course/${course.id}/unit/${unitIdx}/quiz`}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-500"
+                    className={`flex items-center justify-center gap-2 py-3 rounded-xl font-bold transition-all border-b-4 active:border-b-0 active:translate-y-1 ${
+                      progress[`unit-quiz-${unitIdx}`]?.completed 
+                        ? 'bg-amber-600 border-amber-700 text-white hover:bg-amber-400' 
+                        : 'bg-slate-700 border-slate-900 text-slate-200 hover:bg-slate-600'
+                    }`}
                   >
-                    Unit Quiz
+                    <CheckCircle className={`w-5 h-5 ${progress[`unit-quiz-${unitIdx}`]?.completed ? 'text-white' : 'text-slate-400'}`} />
+                    <span>Unit Quiz</span>
                   </Link>
                 ) : (
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/50 opacity-50">
-                    <Lock className="w-4 h-4 text-slate-500" />
-                    <span className="text-slate-400">Unit Quiz</span>
+                  <div className="flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-800 border-b-4 border-slate-900 text-slate-500 opacity-50 cursor-not-allowed">
+                    <Lock className="w-5 h-5" />
+                    <span>Unit Quiz</span>
                   </div>
                 )}
                 {isReviewUnlocked(unitIdx) ? (
                   <Link
                     to={`/course/${course.id}/unit/${unitIdx}/review`}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 border-b-4 border-emerald-800 text-white font-semibold hover:bg-emerald-500 hover:border-emerald-700 transition-all active:border-b-0 active:translate-y-1"
+                    className="flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 border-b-4 border-emerald-700 text-white font-bold hover:bg-emerald-400 transition-all active:border-b-0 active:translate-y-1"
                   >
-                    <Zap className="w-4 h-4" />
-                    <span>General Review</span>
+                    <Zap className="w-5 h-5 fill-current" />
+                    <span>Review</span>
                   </Link>
                 ) : (
-                  // Optional: Hide review entirely if locked, or show grayed out
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/50 border border-slate-700/50 opacity-30 cursor-not-allowed">
-                    <Zap className="w-4 h-4 text-slate-500" />
-                    <span className="text-slate-400">Review</span>
+                  <div className="flex items-center justify-center gap-2 py-3 rounded-xl bg-slate-800 border-b-4 border-slate-900 text-slate-500 opacity-40 cursor-not-allowed">
+                    <Zap className="w-5 h-5" />
+                    <span className="text-sm">Review</span>
                   </div>
                 )}
               </div>
