@@ -51,5 +51,4 @@ npm run dev
 ## To-do
 
 - Add more units
-- Overhaul current structure to narrow individual lesson topics and increase lesson count per unit
 - Add mock AWS-CCP exams (65 questions)

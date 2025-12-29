@@ -41,8 +41,8 @@ export default function GeneralReview({ addXp }: Props) {
             u.lessons.flatMap(l => l.exercises ?? [])
         );
 
-        // Sample 20 questions for a "Big Review" (or fewer if pool is small)
-        const pick = sample(globalPool, 20);
+        // Sample 10 questions
+        const pick = sample(globalPool, 10);
 
         setQuestions(shuffle(pick));
         setIdx(0);
